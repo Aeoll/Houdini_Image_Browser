@@ -29,6 +29,9 @@ from PySide2 import QtUiTools
 from wand.image import Image
 from wand.display import display
 
+import traceback
+import random
+
 # ========================
 # TODO
 # ========================
@@ -49,6 +52,41 @@ THUMBDIR = SCRIPT_DIR + "/thumbs"
 DB = SCRIPT_DIR + "/thumbdb.json"
 imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif"]
 parmNames = ["file", "filename", "map", "tex0", "ar_light_color_texture", "env_map"]
+'''
+Multithread Thumbnail creation and insertion 
+'''
+
+
+class WorkerSignals(QObject):
+    finished = Signal()
+    error = Signal(tuple)
+    result = Signal(object, int)
+
+
+class Worker(QRunnable):
+    def __init__(self, fn, idx, path, *args, **kwargs):
+        super(Worker, self).__init__()
+        # Store constructor arguments (re-used for processing)
+        self.fn = fn
+        self.idx = idx
+        self.path = path
+        self.args = args
+        self.kwargs = kwargs
+        self.signals = WorkerSignals()
+
+    @Slot()
+    def run(self):
+        # Retrieve args/kwargs here; and fire processing using them
+        try:
+            result = self.fn(self.path)
+        except:
+            traceback.print_exc()
+            exctype, value = sys.exc_info()[:2]
+            self.signals.error.emit((exctype, value, traceback.format_exc()))
+        else:
+            self.signals.result.emit(result, self.idx)
+        finally:
+            self.signals.finished.emit()
 
 
 def getImages(p, recurse=False):
@@ -77,9 +115,9 @@ QMainWindow
 '''
 
 
-class HImage(QWidget):
+class HImageThreaded(QWidget):
     def __init__(self):
-        super(HImage, self).__init__()
+        super(HImageThreaded, self).__init__()
         scriptpath = os.path.dirname(os.path.realpath(__file__))
 
         # load thumbnail database
@@ -174,6 +212,10 @@ class HImage(QWidget):
         mainLayout.addWidget(self.ui)
         self.setLayout(mainLayout)
 
+        # Multithreading
+        self.threadpool = QThreadPool()
+        print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
+
     '''
     Signals for menu bar actions
     '''
@@ -219,38 +261,61 @@ class HImage(QWidget):
     Signals for thumb list and preview
     '''
 
+    # TODO
+    def setSingleThumb(self, path, idx):
+        thumbpath = self.thumbdb[str(path)]['thumb']
+        qim = QImage(thumbpath)
+        th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+        # th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio) # do we need to use QImage here instead of QPixmap???
+        item = self.updateDict[idx]
+        item.setIcon(QIcon(th))
+        self.writeThumbDatabase() # write the json to disk immediately?
+
     def updateThumbList(self, path):
         self.thumblist.clear()
         self.thumblistdict.clear()
-        self.thumbGenNonRecursive(path)  # generate thumbs if needed
+        self.updateDict = defaultdict(QListWidget)  # update dict for threadpool
 
         dirImages = getImages(Path(path))
         self.dir_info.setText("Images in Folder: " + str(len(dirImages)))
-        # if none, clear the label
-        if not dirImages:
-            self.thumblargepreview.clear()
+        self.thumblargepreview.clear()  # always clear this?
 
-        # create the thumnbail list widget
+        # get paths to generate thumbs for
+        imagelist = []
+        for p in dirImages:
+            if not p.is_dir() and p.suffix[1:] in imExts:
+                if not str(p) in self.thumbdb:
+                    imagelist.append(p)
+
         for idx, im in enumerate(dirImages):
-            thumbpath = self.thumbdb[str(im)]['thumb']
-            th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+            # For images which need thumbs to be generated
+            if im in imagelist:
+                qim = QImage(150, 150, QImage.Format_RGB16)
+                qim.fill(QColor(0, 0, 0))
+                th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+                imname = str(Path(im).name)
+                item = QListWidgetItem(QIcon(th), str(imname))
+                item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
+                self.thumblist.addItem(item)
+                self.thumblistdict[imname] = str(im)
+                self.updateDict[idx] = item  # add the queued listitem to a widget so it can be updated properly
 
-            # get image name for label and create dict mapping name back to full path
-            imname = str(Path(im).name)
-            self.thumblistdict[imname] = str(im)
+                worker = Worker(self.generateThumbnail, idx, str(im))
+                worker.signals.result.connect(self.setSingleThumb)
+                worker.signals.finished.connect(self.thread_complete)
+                self.threadpool.start(worker)
+            else:
+            # For images with existing thumbnails just create the item
+                thumbpath = self.thumbdb[str(im)]['thumb']
+                th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+                imname = str(Path(im).name)
+                item = QListWidgetItem(QIcon(th), str(imname))
+                item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
+                self.thumblist.addItem(item)
+                self.thumblistdict[imname] = str(im)
 
-            item = QListWidgetItem(QIcon(th), str(imname))
-            item.setToolTip(str(imname))  # show full name on hover
-            item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))  # prevent overrun of text
-            self.thumblist.addItem(item)
-            # Set large preview image to first item thumb
-            if idx == 0:
-                w = self.thumblargepreview.frameGeometry().width()
-                h = self.thumblargepreview.frameGeometry().height()
-                s = min(w, h)
-                mainPrev = QPixmap(thumbpath).scaled(s, s, aspectMode=Qt.KeepAspectRatio)
-                self.thumblargepreview.setPixmap(mainPrev)
-                self.image_info.setText("Image Size: " + self.thumbdb[str(im)]['res'].replace(" ", " x "))  # set image size info
+    def thread_complete(self):
+        print("Thumbnail created")
 
     # return size to fill frame with aspect on
     def fitFrame(self, pixmap, x, y, w, h):
@@ -313,64 +378,64 @@ class HImage(QWidget):
         with Image(filename=filepath) as img:
             thumbdir = THUMBDIR + "/" + Path(filepath).parent.name + "_" + Path(filepath).stem + "_thumb.jpg"
             imsize = img.size
-            mx = max(imsize)
-
             with img.convert('jpg') as i:
                 i.compression_quality = 60
-                # i.sample(self.thSize[0], self.thSize[1])  # faster than resize but horrible quality
                 i.transform(resize=str(self.thSize[0]) + 'x' + str(self.thSize[1]) + '>')  # faster than resize
                 i.save(filename=thumbdir)
-
             key = filepath
             # use nested defaultdict to store osme metadata
             self.thumbdb[key]['thumb'] = str(thumbdir)
             self.thumbdb[key]['thumbres'] = str(self.thSize[0]) + " " + str(self.thSize[1])  #also add thumb size?
             self.thumbdb[key]['res'] = str(imsize[0]) + " " + str(imsize[1])
+            return str(key)
 
     def thumbFolderGen(self, imagelist, force=False):
-        if not force:
-            imagelist = [p for p in imagelist if not str(p) in self.thumbdb]
+        pass
+    #     if not force:
+    #         imagelist = [p for p in imagelist if not str(p) in self.thumbdb]
 
-        if imagelist:
-            # progress bar
-            pbar = QProgressDialog("Generating Thumbnails", "Abort", 0, len(imagelist))
-            pbar.setWindowTitle("Thumbnail Generation Progress")
-            pbar.setMinimumSize(QSize(600, 0))
-            pbar.setWindowModality(Qt.WindowModal)
-            try:
-                pbar.setStyleSheet(hou.qt.styleSheet())
-                # pbar.setWindowFlags(Qt.FramelessWindowHint)
-            except:
-                print("hou not imported")
+    #     if imagelist:
+    #         # progress bar
+    #         pbar = QProgressDialog("Generating Thumbnails", "Abort", 0, len(imagelist))
+    #         pbar.setWindowTitle("Thumbnail Generation Progress")
+    #         pbar.setMinimumSize(QSize(600, 0))
+    #         pbar.setWindowModality(Qt.WindowModal)
+    #         try:
+    #             pbar.setStyleSheet(hou.qt.styleSheet())
+    #             # pbar.setWindowFlags(Qt.FramelessWindowHint)
+    #         except:
+    #             print("hou not imported")
 
-            pbar.setValue(0)
-            pbar.forceShow()
+    #         pbar.setValue(0)
+    #         pbar.forceShow()
 
-            start = time.time()
-            for p in imagelist:
-                if pbar.wasCanceled():
-                    break
-                if not p.is_dir() and p.suffix[1:] in imExts:
-                    # if not p in self.thumbdb:
-                    if not any(p in d.values() for d in self.thumbdb.values()):
-                        self.generateThumbnail(str(p))
-                    else:
-                        print("thumb exists")
-                # progress bar
-                pbar.setValue(pbar.value() + 1)
-                pbar.setLabelText(str(p))
-            end = time.time()
-            print(end - start)
-            self.writeThumbDatabase()
+    #         start = time.time()
+    #         for p in imagelist:
+    #             if pbar.wasCanceled():
+    #                 break
+    #             if not p.is_dir() and p.suffix[1:] in imExts:
+    #                 # if not p in self.thumbdb:
+    #                 if not any(p in d.values() for d in self.thumbdb.values()):
+    #                     self.generateThumbnail(str(p))
+    #                 else:
+    #                     print("thumb exists")
+    #             # progress bar
+    #             pbar.setValue(pbar.value() + 1)
+    #             pbar.setLabelText(str(p))
+    #         end = time.time()
+    #         print(end - start)
+    #         self.writeThumbDatabase()
 
     def thumbGenNonRecursive(self, folder, force=False):
-        images = getImages(Path(folder))
-        self.thumbFolderGen(images)
+        pass
+    #     images = getImages(Path(folder))
+    #     self.thumbFolderGen(images)
 
     def thumbGenRecursive(self, force=False):
-        path = Path(self.dirLineEdit.text())
-        images = getImages(path, recurse=True)
-        self.thumbFolderGen(images)
+        pass
+    #     path = Path(self.dirLineEdit.text())
+    #     images = getImages(path, recurse=True)
+    #     self.thumbFolderGen(images)
 
     def reset(self):
         self.treeSignal(self.tree.currentIndex())
@@ -406,6 +471,6 @@ class HImage(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = HImage()
+    window = HImageThreaded()
     window.show()
     sys.exit(app.exec_())

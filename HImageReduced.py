@@ -91,7 +91,6 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 
 
-
 # ALSO SEE http://euanfreeman.co.uk/pyqt-qpixmap-and-threads/
 # AND https://stackoverflow.com/questions/45157006/python-pyqt-pulsing-progress-bar-with-multithreading OR https://stackoverflow.com/questions/20657753/python-pyside-and-progress-bar-threading
 

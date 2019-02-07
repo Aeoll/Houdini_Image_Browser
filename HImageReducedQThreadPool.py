@@ -23,7 +23,9 @@ import random
 
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT = SCRIPT_DIR + "/red/ROOT_REDUCED"
+# ROOT = SCRIPT_DIR + "/red/ROOT_REDUCED"
+# ROOT = "C:/Users/NickTR2/Dropbox/2_RESOURCES/Textures/_Substance/_Assorted/sbsbar/anodic_powder_paint"
+ROOT = "Z:/_MvsM_Resource/_3D_Assets/_Tex-Library/_SUBSTANCE_DESIGNER/sbsbar/dune_sand"
 THUMBDIR = SCRIPT_DIR + "/red/thumbs_reduced"
 DB = SCRIPT_DIR + "/red/thumbdb_reduced.json"
 
@@ -57,7 +59,8 @@ class Worker(QRunnable):
     def run(self):
         # Retrieve args/kwargs here; and fire processing using them
         try:
-            result = self.fn(self.path, self.idx)
+            # result = self.fn(self.path, self.idx)
+            result = self.fn(self.path)
         except:
             traceback.print_exc()
             exctype, value = sys.exc_info()[:2]
@@ -111,7 +114,6 @@ class HImageReduced(QWidget):
         # item.setSizeHint(QSize(150, 150 + 25))
         self.thumblist.update()
         # self.thumblist.addItem(item)
-        pass
 
     def updateThumbList(self):
         self.start = time.time()
@@ -130,20 +132,13 @@ class HImageReduced(QWidget):
             self.updateDict[idx] = item
             item.setSizeHint(QSize(150, 150 + 25))
             self.thumblist.addItem(item)
-            # pass
 
-        # if dirImages:
-            # for p in dirImages:
-            # self.generateThumbnail(str(p))
-            # Pass the function to execute
-            # Any other args, kwargs are passed to the run function
             worker = Worker(self.generateThumbnail, idx, str(im))
             worker.signals.result.connect(self.setSingleThumb)
             worker.signals.finished.connect(self.thread_complete)
             self.threadpool.start(worker)
 
-    def generateThumbnail(self, filepath, idx):
-        random
+    def generateThumbnail(self, filepath):
         time.sleep(2*random.random())
         with Image(filename=filepath) as img:
             thumbdir = THUMBDIR + "/" + Path(filepath).parent.name + "_" + Path(filepath).stem + "_thumb.jpg"
