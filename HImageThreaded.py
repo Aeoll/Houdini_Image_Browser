@@ -36,7 +36,14 @@ import random
 # TODO
 # ========================
 '''
-Check for thumb regeneration by date modified on file?
+Check for thumb regeneration by date modified on the file?
+Is it better to destroy/create the threadpool only when a directory is selected? Can it cause problems if left empty in the background?
+
+ui is still frozen when generating thumbs...? at least its faster
+
+Thumb menub: Clean db / fix issues
+Goto menu: add current dir to Goto menu with name dialog popup
+Other menu: About!
 
 Profiling: python -m cProfile .\HImage.py
 
@@ -195,7 +202,7 @@ class HImageThreaded(QWidget):
         # Thumbnail list view
         self.thumblist = self.ui.findChild(QListWidget, 'thumblist')
         self.thumblist.setIconSize(QSize(self.thSize[0], self.thSize[1]))
-        self.thumblist.setSpacing(6)
+        self.thumblist.setSpacing(2)
         self.thumblist.doubleClicked.connect(self.setTexture)
         self.thumblist.clicked.connect(self.setLargePreview)
         # self.thumblist.setSizeAdjustPolicy(QListWidget.AdjustToContents)
@@ -261,15 +268,17 @@ class HImageThreaded(QWidget):
     Signals for thumb list and preview
     '''
 
-    # TODO
     def setSingleThumb(self, path, idx):
         thumbpath = self.thumbdb[str(path)]['thumb']
-        qim = QImage(thumbpath)
-        th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
-        # th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio) # do we need to use QImage here instead of QPixmap???
-        item = self.updateDict[idx]
-        item.setIcon(QIcon(th))
-        self.writeThumbDatabase() # write the json to disk immediately?
+        try:
+            qim = QImage(thumbpath)
+            th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+            # th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio) # do we need to use QImage here instead of QPixmap???
+            item = self.updateDict[idx]
+            item.setIcon(QIcon(th))
+        except:
+            print("error setting thumb?")
+        self.writeThumbDatabase()  # write the json to disk immediately?
 
     def updateThumbList(self, path):
         self.thumblist.clear()
@@ -287,6 +296,8 @@ class HImageThreaded(QWidget):
                 if not str(p) in self.thumbdb:
                     imagelist.append(p)
 
+        self.threadpool.clear()
+
         for idx, im in enumerate(dirImages):
             # For images which need thumbs to be generated
             if im in imagelist:
@@ -295,6 +306,7 @@ class HImageThreaded(QWidget):
                 th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
                 imname = str(Path(im).name)
                 item = QListWidgetItem(QIcon(th), str(imname))
+                item.setToolTip(str(imname))
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
                 self.thumblist.addItem(item)
                 self.thumblistdict[imname] = str(im)
@@ -305,17 +317,19 @@ class HImageThreaded(QWidget):
                 worker.signals.finished.connect(self.thread_complete)
                 self.threadpool.start(worker)
             else:
-            # For images with existing thumbnails just create the item
+                # For images with existing thumbnails just create the item
                 thumbpath = self.thumbdb[str(im)]['thumb']
                 th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
                 imname = str(Path(im).name)
                 item = QListWidgetItem(QIcon(th), str(imname))
+                item.setToolTip(str(imname))
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
                 self.thumblist.addItem(item)
                 self.thumblistdict[imname] = str(im)
 
     def thread_complete(self):
-        print("Thumbnail created")
+        # print("Thumbnail created")
+        pass
 
     # return size to fill frame with aspect on
     def fitFrame(self, pixmap, x, y, w, h):
@@ -331,15 +345,17 @@ class HImageThreaded(QWidget):
     def setLargePreview(self, item):
         texname = item.data()
         texpath = self.thumblistdict[texname]
-        thumbname = self.thumbdb[texpath]['thumb']
-        jpg = QPixmap(thumbname)
-
-        w = self.thumblargepreview.geometry().width()
-        h = self.thumblargepreview.geometry().height()
-        size = jpg.size()
-        jpg = self.fitFrame(jpg, size.width(), size.height(), w, h)
-        self.thumblargepreview.setPixmap(jpg)
-        self.image_info.setText("Image Size: " + self.thumbdb[texpath]['res'].replace(" ", " x "))  # set image size info
+        try:
+            thumbname = self.thumbdb[texpath]['thumb']
+            jpg = QPixmap(thumbname)
+            w = self.thumblargepreview.geometry().width()
+            h = self.thumblargepreview.geometry().height()
+            size = jpg.size()
+            jpg = self.fitFrame(jpg, size.width(), size.height(), w, h)
+            self.thumblargepreview.setPixmap(jpg)
+            self.image_info.setText("Image Size: " + self.thumbdb[texpath]['res'].replace(" ", " x "))  # set image size info
+        except:
+            print("thumbnail not yet generated")
 
     '''
     Interaction with Houdini nodes
@@ -391,6 +407,7 @@ class HImageThreaded(QWidget):
 
     def thumbFolderGen(self, imagelist, force=False):
         pass
+
     #     if not force:
     #         imagelist = [p for p in imagelist if not str(p) in self.thumbdb]
 
@@ -428,11 +445,13 @@ class HImageThreaded(QWidget):
 
     def thumbGenNonRecursive(self, folder, force=False):
         pass
+
     #     images = getImages(Path(folder))
     #     self.thumbFolderGen(images)
 
     def thumbGenRecursive(self, force=False):
         pass
+
     #     path = Path(self.dirLineEdit.text())
     #     images = getImages(path, recurse=True)
     #     self.thumbFolderGen(images)
