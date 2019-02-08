@@ -1,4 +1,29 @@
 {
+    "Z:\\0464_Friend_CocaCola\\3_3D\\1_Scenes\\1_Design\\nt\\Assorted\\ipr\\190207-130329-Friend_CocaCola_nt_Assorted_v005_idk-.png": {
+        "res": "1279 719", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/ipr_190207-130329-Friend_CocaCola_nt_Assorted_v005_idk-_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\0464_Friend_CocaCola\\3_3D\\1_Scenes\\1_Design\\nt\\Assorted\\ipr\\190207-130338-Friend_CocaCola_nt_Assorted_v005_idk-.png": {
+        "res": "1279 719", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/ipr_190207-130338-Friend_CocaCola_nt_Assorted_v005_idk-_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\0464_Friend_CocaCola\\3_3D\\1_Scenes\\1_Design\\nt\\Assorted\\ipr\\190207-130404-Friend_CocaCola_nt_Assorted_v005_idk-.png": {
+        "res": "1279 719", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/ipr_190207-130404-Friend_CocaCola_nt_Assorted_v005_idk-_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\0464_Friend_CocaCola\\3_3D\\1_Scenes\\1_Design\\nt\\Assorted\\ipr\\190207-154321-Friend_CocaCola_nt_Assorted_v008_idk-.png": {
+        "res": "1279 719", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/ipr_190207-154321-Friend_CocaCola_nt_Assorted_v008_idk-_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\0464_Friend_CocaCola\\3_3D\\1_Scenes\\1_Design\\nt\\Assorted\\ipr\\190207-155623-Friend_CocaCola_nt_Assorted_v008_idk-.png": {
+        "res": "1279 719", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/ipr_190207-155623-Friend_CocaCola_nt_Assorted_v008_idk-_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
     "Z:\\0464_Friend_CocaCola\\3_3D\\5_3D_Renders\\1_Design\\nt\\Round1\\v001\\0464_Friend_CocaCola_nt_Round1_v001_mantra1.0001.exr": {
         "res": "1080 1080", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/v001_0464_Friend_CocaCola_nt_Round1_v001_mantra1.0001_thumb.jpg", 
@@ -2734,6 +2759,436 @@
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/FIELD_field_thumb.jpg", 
         "thumbres": "600 600"
     }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_002.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_002_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_003.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_003_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_004.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_004_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_005.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_005_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_006.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_006_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_007.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_007_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\180_008.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_180_008_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\25_lier_pond.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_25_lier_pond_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\26_southport_beach.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_26_southport_beach_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH001LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH001LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH002LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH002LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH003LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH003LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH004LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH004LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH005LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH005LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH006LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH006LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH007LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH007LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH008LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH008LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH009LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH009LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH010LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH010LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH011LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH011LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH012LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH012LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH013LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH013LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH014LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH014LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH015LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH015LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH016LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH016LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH017LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH017LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH018LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH018LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH019LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH019LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH020LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH020LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH042LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH042LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH043LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH043LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH044LL.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH044LL_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH044LL_envmap.hdr": {
+        "res": "2048 1024", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH044LL_envmap_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\DH044LL_light.hdr": {
+        "res": "512 256", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_DH044LL_light_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\Sunset.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_Sunset_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\fair.exr": {
+        "res": "12000 6000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_fair_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\groenplaats.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_groenplaats_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\mine.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_mine_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\mine02.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_mine02_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\park.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_park_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\park02.exr": {
+        "res": "12700 6350", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_park02_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\OUTSIDE\\sky.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/OUTSIDE_sky_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\06_kapellen_townsquare2.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_06_kapellen_townsquare2_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\09_brasschaat_serre_open.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_09_brasschaat_serre_open_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\10-Shiodome_Stairs_3k.hdr": {
+        "res": "3200 1600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_10-Shiodome_Stairs_3k_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\10-Shiodome_Stairs_Env.hdr": {
+        "res": "360 180", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_10-Shiodome_Stairs_Env_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\13_vosselaar_garden.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_13_vosselaar_garden_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\13_vosselaar_garden_blur.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_13_vosselaar_garden_blur_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\19_ekeren_bridge.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_19_ekeren_bridge_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\23_antwerp_night.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_23_antwerp_night_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\28_antwerp_station_red_ceiling.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_28_antwerp_station_red_ceiling_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\31_antwerp_station_glass_roof.hdr": {
+        "res": "4000 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_31_antwerp_station_glass_roof_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_02_04.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_02_04_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_02_05.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_02_05_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_02_10.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_02_10_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_03_02.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_03_02_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_03_03.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_03_03_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_03_05.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_03_05_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_03_08.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_03_08_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_03_10.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_03_10_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\CGAxis_HDRI_Maps_04_02.jpg": {
+        "res": "8000 4000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_CGAxis_HDRI_Maps_04_02_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\California_Desert_Small.hdr": {
+        "res": "1500 750", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_California_Desert_Small_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\Castle.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_Castle_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\ConscienceSquare.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_ConscienceSquare_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH201SX.hdr": {
+        "res": "6250 3125", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH201SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH203SX.hdr": {
+        "res": "6246 3123", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH203SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH208SX.hdr": {
+        "res": "6248 3124", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH208SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH209SX.hdr": {
+        "res": "6260 3130", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH209SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH210SX.hdr": {
+        "res": "6260 3130", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH210SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH211SX.hdr": {
+        "res": "6248 3124", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH211SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH213SX.hdr": {
+        "res": "6250 3125", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH213SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH215SX.hdr": {
+        "res": "6250 3125", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH215SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH218SX.hdr": {
+        "res": "6252 3126", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH218SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH219SX.hdr": {
+        "res": "6248 3124", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH219SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\DH222SX.hdr": {
+        "res": "6250 3125", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_DH222SX_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\German_Dirt_Road_Small.hdr": {
+        "res": "1500 750", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_German_Dirt_Road_Small_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\Gravel_Pit_Small.hdr": {
+        "res": "1500 750", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_Gravel_Pit_Small_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\SUNSET.hdr": {
+        "res": "11500 5750", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_SUNSET_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\Square_night.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_Square_night_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\TheaterSquare.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_TheaterSquare_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\TrainStation.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_TrainStation_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\TrainStation02.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_TrainStation02_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\conscience_square_hdri_3d_model_3ds_cb0c1625-f9da-4b6b-8d1f-344c11bffdfa.jpg": {
+        "res": "5000 2500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_conscience_square_hdri_3d_model_3ds_cb0c1625-f9da-4b6b-8d1f-344c11bffdfa_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\hdri_no_44_over_the_cannal_by_ketsuo_miurareiko-d8kbi02.jpg": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_hdri_no_44_over_the_cannal_by_ketsuo_miurareiko-d8kbi02_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\hdri_no_45_katsura_major_bridge_by_ketsuo_miurareiko-d8lii43.jpg": {
+        "res": "3072 1536", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_hdri_no_45_katsura_major_bridge_by_ketsuo_miurareiko-d8lii43_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRi-Library\\STREET\\schelde.hdr": {
+        "res": "3000 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/STREET_schelde_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\BOKEH\\Additive_RGB_Circles-48bpp.png": {
         "res": "896 896", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/BOKEH_Additive_RGB_Circles-48bpp_thumb.jpg", 
@@ -2922,6 +3377,426 @@
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\BOKEH\\undecagon.tif": {
         "res": "512 512", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/BOKEH_undecagon_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+01_b030+g100.png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+01_b030+g100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+01_d100+(s010).png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+01_d100+(s010)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+02_b030+g100.png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+02_b030+g100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+02_d100+(s020).png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+02_d100+(s020)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+03_b030+s100.png": {
+        "res": "1600 1600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+03_b030+s100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+03_d100+(g050).png": {
+        "res": "1600 1600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+03_d100+(g050)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+04_b015.png": {
+        "res": "5500 3600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+04_b015_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+04_d100.png": {
+        "res": "5500 3600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+04_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+04_s050+(g000).png": {
+        "res": "5500 3600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+04_s050+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+05_b030+g100.png": {
+        "res": "1800 1800", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+05_b030+g100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+05_d100+(s010).png": {
+        "res": "1800 1800", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+05_d100+(s010)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+06_b030.png": {
+        "res": "12000 4700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+06_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+06_d100.png": {
+        "res": "12000 4700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+06_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+06_s100+(g050).png": {
+        "res": "12000 4700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+06_s100+(g050)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+07_b015+s015.png": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+07_b015+s015_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+07_d100+(g000).png": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+07_d100+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+08_b030.png": {
+        "res": "6000 4900", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+08_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+08_d100.png": {
+        "res": "6000 4900", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+08_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+08_s100+g100.png": {
+        "res": "6000 4900", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+08_s100+g100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+09_b030.png": {
+        "res": "1700 1700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+09_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+09_d100.png": {
+        "res": "1700 1700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+09_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+09_s025+(g000).png": {
+        "res": "1700 1700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+09_s025+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+10_b030.png": {
+        "res": "1700 1700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+10_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+10_d100.png": {
+        "res": "1700 1700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+10_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+10_s050+(g000).png": {
+        "res": "1700 1700", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+10_s050+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+11_b030.png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+11_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+11_d100.png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+11_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+11_s025+g100.png": {
+        "res": "1500 1500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+11_s025+g100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+12_b030.png": {
+        "res": "1900 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+12_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+12_d100+(s000)+(g000).png": {
+        "res": "1900 2000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+12_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+13_b030.png": {
+        "res": "3900 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+13_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+13_d100+(s000)+(g000).png": {
+        "res": "3900 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+13_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+14_b020.png": {
+        "res": "4000 2500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+14_b020_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+14_d100+(s000)+(g000).png": {
+        "res": "4000 2500", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+14_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+15_b030.png": {
+        "res": "2500 1800", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+15_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+15_d100+(s000)+(g000).png": {
+        "res": "2500 1800", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+15_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+16_b030.png": {
+        "res": "1800 2600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+16_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+16_d100+(s000)+(g000).png": {
+        "res": "1800 2600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+16_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+17_b030.png": {
+        "res": "1800 2600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+17_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+17_d100+(s000)+(g000).png": {
+        "res": "1800 2600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+17_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+18_b030.png": {
+        "res": "2600 2600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+18_b030_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+18_d100+(s000)+(g000).png": {
+        "res": "2600 2600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+18_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+19_b050.png": {
+        "res": "2100 1800", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+19_b050_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+19_d100+(s000)+(g000).png": {
+        "res": "2100 1800", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+19_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+20_b050.png": {
+        "res": "6000 3000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+20_b050_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+20_d100.png": {
+        "res": "6000 3000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+20_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+20_s100+(g030).png": {
+        "res": "6000 3000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+20_s100+(g030)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+21_b050.png": {
+        "res": "8000 1600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+21_b050_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+21_d100+(s000)+(g000).png": {
+        "res": "8000 1600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+21_d100+(s000)+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+22_b015.png": {
+        "res": "2400 8300", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+22_b015_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+22_d100.png": {
+        "res": "2400 8300", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+22_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+22_s025.png": {
+        "res": "2400 8300", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+22_s025_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+23_b015.png": {
+        "res": "2600 6000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+23_b015_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+23_d100.png": {
+        "res": "2600 6000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+23_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+23_s025+g100.png": {
+        "res": "2600 6000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+23_s025+g100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+24_b050.png": {
+        "res": "6300 2400", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+24_b050_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+24_d100.png": {
+        "res": "6300 2400", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+24_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+24_s025+(g000).png": {
+        "res": "6300 2400", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+24_s025+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+25_b020.png": {
+        "res": "3400 3400", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+25_b020_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+25_d100.png": {
+        "res": "3400 3400", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+25_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+25_s025+(g000).png": {
+        "res": "3400 3400", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+25_s025+(g000)_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+26_b015.png": {
+        "res": "3000 3600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+26_b015_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\plaster+26_d100.png": {
+        "res": "3000 3600", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_plaster+26_d100_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture19_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture19_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture20_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture20_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture21_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture21_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture22_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture22_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture4_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture4_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture5_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture5_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture6_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture6_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture7_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture7_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\PLASTER\\seamlesstexture8_1200.jpg": {
+        "res": "1200 1200", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/PLASTER_seamlesstexture8_1200_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Opacity.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Opacity_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Opacity.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Opacity_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Roughness_thumb.jpg", 
         "thumbres": "600 600"
     }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Base_Color.png": {
@@ -3154,6 +4029,71 @@
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_ash_bark_red_plane_Specular_thumb.jpg", 
         "thumbres": "600 600"
     }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Ambient_Occlusion.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Ambient_Occlusion_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_european_beech_greened\\bark_european_beech_greened_Specular.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_european_beech_greened_bark_european_beech_greened_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_pine\\bark_pine_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_pine_bark_pine_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_pine\\bark_pine_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_pine_bark_pine_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_pine\\bark_pine_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_pine_bark_pine_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_pine\\bark_pine_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_pine_bark_pine_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_pine\\bark_pine_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_pine_bark_pine_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bark_pine\\bark_pine_Specular.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bark_pine_bark_pine_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\brass\\brass_Base_Color.png": {
         "res": "4096 4096", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/brass_brass_Base_Color_thumb.jpg", 
@@ -3182,6 +4122,61 @@
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\brass\\brass_Specular.png": {
         "res": "4096 4096", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/brass_brass_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow2\\bricks_combined_yellow_Base_Color.png": {
+        "res": "2048 2048", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow2_bricks_combined_yellow_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow2\\bricks_combined_yellow_Height.png": {
+        "res": "2048 2048", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow2_bricks_combined_yellow_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow2\\bricks_combined_yellow_Metallic.png": {
+        "res": "2048 2048", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow2_bricks_combined_yellow_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow2\\bricks_combined_yellow_Normal.png": {
+        "res": "2048 2048", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow2_bricks_combined_yellow_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow2\\bricks_combined_yellow_Roughness.png": {
+        "res": "2048 2048", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow2_bricks_combined_yellow_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow\\bricks_combined_yellow_Ambient_Occlusion.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow_bricks_combined_yellow_Ambient_Occlusion_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow\\bricks_combined_yellow_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow_bricks_combined_yellow_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow\\bricks_combined_yellow_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow_bricks_combined_yellow_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow\\bricks_combined_yellow_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow_bricks_combined_yellow_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow\\bricks_combined_yellow_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow_bricks_combined_yellow_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\bricks_combined_yellow\\bricks_combined_yellow_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/bricks_combined_yellow_bricks_combined_yellow_Roughness_thumb.jpg", 
         "thumbres": "600 600"
     }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\canvas_white\\canvas_white_Ambient_Occlusion.png": {
@@ -3284,6 +4279,36 @@
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/carbon_fiber_plain_weave_carbon_fiber_plain_weave_Specular_Level_thumb.jpg", 
         "thumbres": "600 600"
     }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\climbing_rope\\climbing_rope_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/climbing_rope_climbing_rope_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\climbing_rope\\climbing_rope_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/climbing_rope_climbing_rope_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\climbing_rope\\climbing_rope_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/climbing_rope_climbing_rope_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\climbing_rope\\climbing_rope_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/climbing_rope_climbing_rope_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\climbing_rope\\climbing_rope_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/climbing_rope_climbing_rope_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\climbing_rope\\climbing_rope_Specular.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/climbing_rope_climbing_rope_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_eroded\\concrete_eroded_Base_Color.png": {
         "res": "4096 4096", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_eroded_concrete_eroded_Base_Color_thumb.jpg", 
@@ -3314,6 +4339,116 @@
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_eroded_concrete_eroded_Specular_thumb.jpg", 
         "thumbres": "600 600"
     }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_float\\concrete_float_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_float_concrete_float_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_float\\concrete_float_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_float_concrete_float_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_float\\concrete_float_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_float_concrete_float_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_float\\concrete_float_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_float_concrete_float_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_float\\concrete_float_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_float_concrete_float_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_raw_panels\\concrete_raw_panels_Base_Color.tga": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_raw_panels_concrete_raw_panels_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_raw_panels\\concrete_raw_panels_Height.tga": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_raw_panels_concrete_raw_panels_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_raw_panels\\concrete_raw_panels_Metallic.tga": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_raw_panels_concrete_raw_panels_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_raw_panels\\concrete_raw_panels_Normal.tga": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_raw_panels_concrete_raw_panels_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\concrete_raw_panels\\concrete_raw_panels_Roughness.tga": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/concrete_raw_panels_concrete_raw_panels_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Base_Color.png": {
+        "res": "512 512", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Height.png": {
+        "res": "512 512", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Metallic.png": {
+        "res": "512 512", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Normal.png": {
+        "res": "512 512", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Roughness.png": {
+        "res": "512 512", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Specular.png": {
+        "res": "512 512", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_clean\\gold_clean_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_clean_gold_clean_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_clean\\gold_clean_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_clean_gold_clean_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_clean\\gold_clean_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_clean_gold_clean_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_clean\\gold_clean_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_clean_gold_clean_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_clean\\gold_clean_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_clean_gold_clean_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_clean\\gold_clean_Specular.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_clean_gold_clean_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf\\gold_leaf_Base_Color.png": {
         "res": "4096 4096", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_gold_leaf_Base_Color_thumb.jpg", 
@@ -3342,6 +4477,86 @@
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf\\gold_leaf_Specular.png": {
         "res": "4096 4096", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_gold_leaf_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Color_Coat.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Color_Coat_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Color_Flake.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Color_Flake_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Height_Scale.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Height_Scale_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Normal_Flake.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Normal_Flake_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Roughness_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Roughness_Flake.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Roughness_Flake_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\metallic_car_paint\\metallic_car_paint_Specular.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/metallic_car_paint_metallic_car_paint_Specular_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\terracotta_simple\\terracotta_simple_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/terracotta_simple_terracotta_simple_Base_Color_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\terracotta_simple\\terracotta_simple_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/terracotta_simple_terracotta_simple_Height_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\terracotta_simple\\terracotta_simple_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/terracotta_simple_terracotta_simple_Metallic_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\terracotta_simple\\terracotta_simple_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/terracotta_simple_terracotta_simple_Normal_thumb.jpg", 
+        "thumbres": "600 600"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\terracotta_simple\\terracotta_simple_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/terracotta_simple_terracotta_simple_Roughness_thumb.jpg", 
         "thumbres": "600 600"
     }
 }

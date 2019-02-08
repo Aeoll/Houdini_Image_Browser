@@ -38,11 +38,10 @@ import random
 '''
 Check for thumb regeneration by date modified on the file?
 Is it better to destroy/create the threadpool only when a directory is selected? Can it cause problems if left empty in the background?
-
-ui is still frozen when generating thumbs...? at least its faster
+CRASH ON CLOSING HOUDINI? HOW TO CLEAN QTHREADPOOL?
 
 Thumb menub: Clean db / fix issues
-Goto menu: add current dir to Goto menu with name dialog popup
+Goto menu: add current dir to Goto menu with name dialog popup. Default startup path
 Other menu: About!
 
 Profiling: python -m cProfile .\HImage.py
@@ -54,15 +53,14 @@ context menu for qlistwidget? https://stackoverflow.com/questions/48890473/how-d
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # default location to open
-ROOT = SCRIPT_DIR + "/ROOT_B"
 THUMBDIR = SCRIPT_DIR + "/thumbs"
 DB = SCRIPT_DIR + "/thumbdb.json"
 imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif"]
 parmNames = ["file", "filename", "map", "tex0", "ar_light_color_texture", "env_map"]
-'''
-Multithread Thumbnail creation and insertion 
-'''
 
+'''
+Multithread Thumbnail creation and insertion
+'''
 
 class WorkerSignals(QObject):
     finished = Signal()
@@ -109,14 +107,6 @@ def getImages(p, recurse=False):
     return all_files
 
 
-def getGotoDirs():
-    goto = None
-    with open(SCRIPT_DIR + "/goto.json", 'r') as f:
-        goto = json.load(f)
-    f.close()
-    return goto
-
-
 '''
 QMainWindow
 '''
@@ -151,8 +141,13 @@ class HImageThreaded(QWidget):
         self.fromNodeBtn = self.ui.findChild(QPushButton, 'fromNodeBtn')
         self.fromNodeBtn.clicked.connect(self.pathFromNode)
 
+        self.actionAddFav = self.ui.findChild(QAction, 'actionAddFavourite')
+        self.actionAddFav.triggered.connect(self.addFav)
+        self.actionSetStartupPath = self.ui.findChild(QAction, 'actionStartup')
+        self.actionSetStartupPath.triggered.connect(self.setStartupPath)
+
         # Add GoTo's - add goto actions from json file for other paths? not working but no errors??
-        self.gotoDirs = getGotoDirs()
+        self.gotoDirs = self.getGotoDirs()
         actions = []
         for key, val in self.gotoDirs.items():
             action = QAction(str(key), self)  # needs a parent object in order to work in hou?
@@ -170,25 +165,37 @@ class HImageThreaded(QWidget):
             action.triggered.connect(functools.partial(self.thumbSizing, action.data()))
             self.menuThumbSizes.addAction(action)
 
-        # TREE
+        # TREE VIEW AND FILESYSTEM MODEL
         self.model = QFileSystemModel()
-        self.model.setRootPath(QDir.currentPath())
         self.model.setFilter(QDir.NoDotAndDotDot | QDir.AllDirs)
         self.tree = self.ui.findChild(QTreeView, 'dirtree')
         self.tree.setModel(self.model)
         self.tree.setIndentation(15)
         self.tree.setColumnWidth(0, 250)  # get widget width to set..
         for c in range(1, 5):
-            self.tree.hideColumn(c)  # hide all columns except name..
+            self.tree.hideColumn(c)  # hide all columns except name..?
 
-        # navigate to root filepath
-        idx = self.model.index(QDir(ROOT).absolutePath())
+        # navigate to the startup/ROOT filepath
+        with open(SCRIPT_DIR + "/config.json", 'r') as f:
+            self.config = json.load(f)
+            self.ROOT = self.config['StartupPath']
+            try:
+                idx = self.model.index(QDir(self.ROOT).absolutePath())
+            except:
+                print("statup path not found")
+        f.close()
+
+        self.model.setRootPath(str(Path(self.ROOT).drive)) # seems to be required for proper sorting
+        self.tree.setSortingEnabled(True)
+        self.tree.sortByColumn(0, Qt.SortOrder.AscendingOrder)
+
         self.tree.collapseAll()
         self.expandTree(idx)  # doesnt scroll properly on initial load?
         self.tree.pressed.connect(self.treeSignal)  # prevents this firing twice on double click
 
+        # Directory path Line edit
         self.dirLineEdit = self.ui.findChild(QLineEdit, 'dirLineEdit')
-        self.dirLineEdit.setText(QDir(ROOT).absolutePath())
+        self.dirLineEdit.setText(QDir(self.ROOT).absolutePath())
         self.dirLineEdit.textChanged.connect(self.dirLineEditUpdate)
 
         # info labels
@@ -232,6 +239,37 @@ class HImageThreaded(QWidget):
         self.tree.scrollTo(idx, hint=QAbstractItemView.PositionAtTop)
         self.tree.expand(idx)
         self.tree.setCurrentIndex(idx)
+
+    def setStartupPath(self):
+        path = self.dirLineEdit.text()
+        self.config['StartupPath'] = path
+        with open(SCRIPT_DIR + "/config.json", 'w') as f:
+            json.dump(self.config, f, indent=4, sort_keys=True)
+        f.close()
+
+    def addFav(self):
+        path = self.dirLineEdit.text()
+        favname, ok = QInputDialog.getText(self, "Add Favourite","Name:", QLineEdit.Normal, "")
+        if ok and favname:
+            self.gotoDict[str(favname)] = str(path)
+            action = QAction(str(favname), self)  # needs a parent object in order to work in hou?
+            action.setData(str(path))
+            action.triggered.connect(functools.partial(self.goto, action.data()))
+            self.menuGoto.addAction(action)
+            self.writeGotoDirs()
+        pass
+
+    def getGotoDirs(self):
+        self.gotoDict = None
+        with open(SCRIPT_DIR + "/goto.json", 'r') as f:
+            self.gotoDict = json.load(f)
+        f.close()
+        return self.gotoDict
+
+    def writeGotoDirs(self):
+        with open(SCRIPT_DIR + "/goto.json", 'w') as f:
+            json.dump(self.gotoDict, f, indent=4, sort_keys=True)
+        f.close()
 
     def goto(self, path):
         if path.startswith('$'):
@@ -314,7 +352,7 @@ class HImageThreaded(QWidget):
 
                 worker = Worker(self.generateThumbnail, idx, str(im))
                 worker.signals.result.connect(self.setSingleThumb)
-                worker.signals.finished.connect(self.thread_complete)
+                # worker.signals.finished.connect(self.thread_complete)
                 self.threadpool.start(worker)
             else:
                 # For images with existing thumbnails just create the item
@@ -326,10 +364,6 @@ class HImageThreaded(QWidget):
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
                 self.thumblist.addItem(item)
                 self.thumblistdict[imname] = str(im)
-
-    def thread_complete(self):
-        # print("Thumbnail created")
-        pass
 
     # return size to fill frame with aspect on
     def fitFrame(self, pixmap, x, y, w, h):
@@ -407,7 +441,6 @@ class HImageThreaded(QWidget):
 
     def thumbFolderGen(self, imagelist, force=False):
         pass
-
     #     if not force:
     #         imagelist = [p for p in imagelist if not str(p) in self.thumbdb]
 
@@ -443,15 +476,14 @@ class HImageThreaded(QWidget):
     #         print(end - start)
     #         self.writeThumbDatabase()
 
-    def thumbGenNonRecursive(self, folder, force=False):
+    def thumbGenNonRecursive(self, force=False):
         pass
-
-    #     images = getImages(Path(folder))
+    #     path = Path(self.dirLineEdit.text())
+    #     images = getImages(path, recurse=True)
     #     self.thumbFolderGen(images)
 
     def thumbGenRecursive(self, force=False):
         pass
-
     #     path = Path(self.dirLineEdit.text())
     #     images = getImages(path, recurse=True)
     #     self.thumbFolderGen(images)
@@ -475,6 +507,9 @@ class HImageThreaded(QWidget):
             json.dump(self.thumbdb, f, indent=4, sort_keys=True)
         f.close()
 
+    def cleanThumbDatabase(self):
+        pass
+
     def clearThumbDatabase(self):
         for key, value in self.thumbdb.iteritems():  #this wont work in python3 which uses items(S)
             try:
@@ -486,6 +521,15 @@ class HImageThreaded(QWidget):
             json.dump(self.thumbdb, f)
         f.close()
         self.reset()
+
+    # CLOSING
+    def closeEvent(self, event):
+        print(self.threadpool.activeThreadCount())
+        self.threadpool.waitForDone()
+        self.threadpool.clear()
+        print("closing and clearing threadpool")
+        # close window
+        event.accept()
 
 
 if __name__ == "__main__":

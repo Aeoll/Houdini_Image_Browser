@@ -233,15 +233,19 @@
       <string>Thumbnail Size</string>
      </property>
     </widget>
-    <addaction name="actionCreate_Thumbs_for_Directory"/>
-    <addaction name="actionRefresh_Current_Dir"/>
-    <addaction name="actionClear_Thumb_Database"/>
     <addaction name="menuThumbnail_Size"/>
+    <addaction name="actionRefresh_Current_Dir"/>
+    <addaction name="separator"/>
+    <addaction name="actionCreate_Thumbs_for_Directory"/>
+    <addaction name="actionClear_Thumb_Database"/>
    </widget>
    <widget class="QMenu" name="menuGoTo">
     <property name="title">
      <string>GOTO</string>
     </property>
+    <addaction name="actionAddFavourite"/>
+    <addaction name="actionStartup"/>
+    <addaction name="separator"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuGoTo"/>
@@ -264,7 +268,7 @@
   </action>
   <action name="actionRefresh_Current_Dir">
    <property name="text">
-    <string>Recreate Thumbs for Dir</string>
+    <string>Recreate Thumbs for this Folder</string>
    </property>
   </action>
   <action name="actionClear_Thumb_Database">
@@ -275,6 +279,16 @@
   <action name="action50">
    <property name="text">
     <string>50</string>
+   </property>
+  </action>
+  <action name="actionAddFavourite">
+   <property name="text">
+    <string>Add Current Folder to Favourites</string>
+   </property>
+  </action>
+  <action name="actionStartup">
+   <property name="text">
+    <string>Set Current Folder as Startup</string>
    </property>
   </action>
  </widget>
