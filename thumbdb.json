@@ -1,4 +1,34 @@
 {
+    "C:\\Users\\NickTR2\\Dropbox\\2_RESOURCES\\Textures\\_Substance\\_Assorted\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Base_Color.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\NickTR2\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Base_Color_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "C:\\Users\\NickTR2\\Dropbox\\2_RESOURCES\\Textures\\_Substance\\_Assorted\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\NickTR2\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Height_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "C:\\Users\\NickTR2\\Dropbox\\2_RESOURCES\\Textures\\_Substance\\_Assorted\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\NickTR2\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Metallic_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "C:\\Users\\NickTR2\\Dropbox\\2_RESOURCES\\Textures\\_Substance\\_Assorted\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\NickTR2\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Normal_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "C:\\Users\\NickTR2\\Dropbox\\2_RESOURCES\\Textures\\_Substance\\_Assorted\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Opacity.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\NickTR2\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Opacity_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "C:\\Users\\NickTR2\\Dropbox\\2_RESOURCES\\Textures\\_Substance\\_Assorted\\sbsbar\\acetate_beech_zebrano\\acetate_beech_zebrano_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\NickTR2\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_beech_zebrano_acetate_beech_zebrano_Roughness_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\GSG_LIGHTS\\HDRIs\\2 Soft box.hdr": {
         "res": "3000 1500", 
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_2 Soft box_thumb.jpg", 
@@ -1329,34 +1359,379 @@
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_GSG_PRO_STUDIOS_METAL_045_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Base_Color.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Base_Color_thumb.jpg", 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\MVSM_HDRIs\\HDRIs\\Studio_HDRI_BikeDen_oh_01_hdr.hdr": {
+        "res": "5784 2892", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_Studio_HDRI_BikeDen_oh_01_hdr_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Height.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Height_thumb.jpg", 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\42ND_STREET.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_42ND_STREET_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Metallic.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Metallic_thumb.jpg", 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\44TH_STREET.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_44TH_STREET_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Normal.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Normal_thumb.jpg", 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\49TH_STREET.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_49TH_STREET_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Opacity.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Opacity_thumb.jpg", 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\51ST_AND_5TH.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_51ST_AND_5TH_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\acetate_lichen\\acetate_lychen_Roughness.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\53RD_STREET.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_53RD_STREET_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\5TH_AVENUE.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_5TH_AVENUE_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\BROADWAY_LAFAYETTE_STATION_1.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_BROADWAY_LAFAYETTE_STATION_1_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\BROADWAY_LAFAYETTE_STATION_2.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_BROADWAY_LAFAYETTE_STATION_2_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\CHINATOWN_1.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_CHINATOWN_1_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\CHINATOWN_2.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_CHINATOWN_2_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\CHINATOWN_3.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_CHINATOWN_3_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\MINSKOFF_THEATRE.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_MINSKOFF_THEATRE_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\SUBWAY_Q_TRAIN.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_SUBWAY_Q_TRAIN_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\TIMES_SQUARE_1.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_TIMES_SQUARE_1_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\TIMES_SQUARE_2.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_TIMES_SQUARE_2_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\ManhattanNights\\HDRIs\\TIMES_SQUARE_3.exr": {
+        "res": "4608 2304", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_TIMES_SQUARE_3_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0707 Dawn Sun.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0707 Dawn Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0743 Cloudy Morning Sun.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0743 Cloudy Morning Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0839 Cloudy Dawn.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0839 Cloudy Dawn_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0902 Overcast.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0902 Overcast_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0907 Dawn Sun.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0907 Dawn Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0911 Dawn.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0911 Dawn_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0917 Dawn.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0917 Dawn_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\0927 Wispy Clouds Tiled.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_0927 Wispy Clouds Tiled_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1008 Cloudy.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1008 Cloudy_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1044 Overcast Sun.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1044 Overcast Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1103 Sun Clouds Tiled.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1103 Sun Clouds Tiled_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1224 Clear Sky Tiled.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1224 Clear Sky Tiled_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1236 Clear Winter Sky.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1236 Clear Winter Sky_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1313 Cloudy.hdr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1313 Cloudy_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1433 Sun Blue Sky.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1433 Sun Blue Sky_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1554 Clear Sky Low Sun.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1554 Clear Sky Low Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1608 Cloudy Sunset.exr": {
+        "res": "7144 3572", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1608 Cloudy Sunset_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1658 Sun Clouds.hdr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1658 Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1739 Sun Clouds.hdr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1739 Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1808 Blue Sky White Clouds.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1808 Blue Sky White Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1847 Dusk Sun.hdr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1847 Dusk Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1929 Cloudy Sunset.hdr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1929 Cloudy Sunset_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1934 Dusk Sun Clouds.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1934 Dusk Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\1941 Dusk Blue Tiled.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_1941 Dusk Blue Tiled_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\2003 Dusk Blue.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_2003 Dusk Blue_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\HDRIs\\2009 Dusk Pink Sky Tiled.exr": {
+        "res": "7094 3547", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/HDRIs_2009 Dusk Pink Sky Tiled_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0707 Dawn Sun.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0707 Dawn Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0743 Cloudy Morning Sun.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0743 Cloudy Morning Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0839 Cloudy Dawn.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0839 Cloudy Dawn_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0902 Overcast.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0902 Overcast_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0907 Dawn Sun.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0907 Dawn Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0911 Dawn.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0911 Dawn_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0917 Dawn.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0917 Dawn_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\0927 wispy clouds.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_0927 wispy clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1008 Cloudy.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1008 Cloudy_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1044 Overcast Sun.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1044 Overcast Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1103 Sun Clouds.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1103 Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1224 Clear Sky.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1224 Clear Sky_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1236 Clear Winter Sky.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1236 Clear Winter Sky_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1313 Cloudy.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1313 Cloudy_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1433 Sun Blue Sky.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1433 Sun Blue Sky_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1554 Clear Sky Low Sun.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1554 Clear Sky Low Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1608 Cloudy Sunset.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1608 Cloudy Sunset_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1658 Sun Clouds.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1658 Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1739 Sun Clouds.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1739 Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1808 Blue Sky White Clouds.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1808 Blue Sky White Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1847 Dusk Sun.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1847 Dusk Sun_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1929 Cloudy Sunset.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1929 Cloudy Sunset_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1934 Dusk Sun Clouds.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1934 Dusk Sun Clouds_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\1941 Dusk Blue.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_1941 Dusk Blue_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\2003 Dusk Blue.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_2003 Dusk Blue_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_HDRI\\PeterGuthrie\\Thumbnails\\2009 Dusk Pink Sky.jpg": {
+        "res": "2000 1000", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/Thumbnails_2009 Dusk Pink Sky_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Base_Color.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/acetate_lichen_acetate_lychen_Roughness_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_brushed_aluminium_brushed_Base_Color_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Height.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_brushed_aluminium_brushed_Height_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Metallic.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_brushed_aluminium_brushed_Metallic_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Normal.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_brushed_aluminium_brushed_Normal_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Roughness.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_brushed_aluminium_brushed_Roughness_thumb.jpg", 
+        "thumbres": "700 700"
+    }, 
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_brushed\\aluminium_brushed_Specular.png": {
+        "res": "4096 4096", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_brushed_aluminium_brushed_Specular_thumb.jpg", 
         "thumbres": "700 700"
     }, 
     "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\aluminium_foil\\aluminium_foil_Base_Color.png": {
@@ -1389,124 +1764,64 @@
         "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/aluminium_foil_aluminium_foil_Specular_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodized_aluminium\\anodized_aluminium_Base_Color.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodic_powder_paint\\anodic_powder_paint_Base_Color.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodized_aluminium_anodized_aluminium_Base_Color_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodic_powder_paint_anodic_powder_paint_Base_Color_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodized_aluminium\\anodized_aluminium_Height.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodic_powder_paint\\anodic_powder_paint_Height.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodized_aluminium_anodized_aluminium_Height_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodic_powder_paint_anodic_powder_paint_Height_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodized_aluminium\\anodized_aluminium_Metallic.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodic_powder_paint\\anodic_powder_paint_Metallic.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodized_aluminium_anodized_aluminium_Metallic_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodic_powder_paint_anodic_powder_paint_Metallic_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodized_aluminium\\anodized_aluminium_Normal.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodic_powder_paint\\anodic_powder_paint_Normal.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodized_aluminium_anodized_aluminium_Normal_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodic_powder_paint_anodic_powder_paint_Normal_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodized_aluminium\\anodized_aluminium_Roughness.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodic_powder_paint\\anodic_powder_paint_Roughness.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodized_aluminium_anodized_aluminium_Roughness_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodic_powder_paint_anodic_powder_paint_Roughness_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodized_aluminium\\anodized_aluminium_Specular.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\anodic_powder_paint\\anodic_powder_paint_Specular.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodized_aluminium_anodized_aluminium_Specular_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/anodic_powder_paint_anodic_powder_paint_Specular_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Base_Color.png": {
-        "res": "512 512", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Base_Color_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Height.png": {
-        "res": "512 512", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Height_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Metallic.png": {
-        "res": "512 512", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Metallic_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Normal.png": {
-        "res": "512 512", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Normal_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Roughness.png": {
-        "res": "512 512", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Roughness_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\copper_braided_cable\\copper_braided_cable_Specular.png": {
-        "res": "512 512", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/copper_braided_cable_copper_braided_cable_Specular_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf_waste\\gold_leaf_waste_Base_Color.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\antique_bronze_darkened\\antique_bronze_darkened_Base_Color.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_waste_gold_leaf_waste_Base_Color_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/antique_bronze_darkened_antique_bronze_darkened_Base_Color_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf_waste\\gold_leaf_waste_Height.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\antique_bronze_darkened\\antique_bronze_darkened_Glossiness.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_waste_gold_leaf_waste_Height_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/antique_bronze_darkened_antique_bronze_darkened_Glossiness_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf_waste\\gold_leaf_waste_Metallic.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\antique_bronze_darkened\\antique_bronze_darkened_Height.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_waste_gold_leaf_waste_Metallic_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/antique_bronze_darkened_antique_bronze_darkened_Height_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf_waste\\gold_leaf_waste_Normal.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\antique_bronze_darkened\\antique_bronze_darkened_Metallic.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_waste_gold_leaf_waste_Normal_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/antique_bronze_darkened_antique_bronze_darkened_Metallic_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf_waste\\gold_leaf_waste_Roughness.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\antique_bronze_darkened\\antique_bronze_darkened_Normal.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_waste_gold_leaf_waste_Roughness_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/antique_bronze_darkened_antique_bronze_darkened_Normal_thumb.jpg", 
         "thumbres": "700 700"
     }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\gold_leaf_waste\\gold_leaf_waste_Specular.png": {
+    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\antique_bronze_darkened\\antique_bronze_darkened_Roughness.png": {
         "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/gold_leaf_waste_gold_leaf_waste_Specular_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\leather_rugged_circle_folding\\leather_rugged_circle_folding_Base_Color.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/leather_rugged_circle_folding_leather_rugged_circle_folding_Base_Color_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\leather_rugged_circle_folding\\leather_rugged_circle_folding_Height.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/leather_rugged_circle_folding_leather_rugged_circle_folding_Height_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\leather_rugged_circle_folding\\leather_rugged_circle_folding_Metallic.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/leather_rugged_circle_folding_leather_rugged_circle_folding_Metallic_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\leather_rugged_circle_folding\\leather_rugged_circle_folding_Normal.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/leather_rugged_circle_folding_leather_rugged_circle_folding_Normal_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\leather_rugged_circle_folding\\leather_rugged_circle_folding_Roughness.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/leather_rugged_circle_folding_leather_rugged_circle_folding_Roughness_thumb.jpg", 
-        "thumbres": "700 700"
-    }, 
-    "Z:\\_MvsM_Resource\\_3D_Assets\\_Tex-Library\\_SUBSTANCE_DESIGNER\\sbsbar\\leather_rugged_circle_folding\\leather_rugged_circle_folding_Specular.png": {
-        "res": "4096 4096", 
-        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/leather_rugged_circle_folding_leather_rugged_circle_folding_Specular_thumb.jpg", 
+        "thumb": "C:\\Users\\Lukas\\Dropbox\\1_HOUDINI\\04_Plugins\\Houdini_Image_Browser/thumbs/antique_bronze_darkened_antique_bronze_darkened_Roughness_thumb.jpg", 
         "thumbres": "700 700"
     }
 }

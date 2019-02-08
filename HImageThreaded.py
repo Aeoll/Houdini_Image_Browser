@@ -1,6 +1,5 @@
 from __future__ import print_function
 import sys
-
 import time
 import os
 import json
@@ -12,7 +11,6 @@ try:
     from pathlib import *
 except ImportError:
     from pathlib2 import *
-
 # https://www.sidefx.com/forum/topic/59279/?page=1#post-265525
 try:
     import hou
@@ -24,40 +22,32 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from PySide2.QtCore import *
 from PySide2 import QtUiTools
-
 # Wand
 from wand.image import Image
 from wand.display import display
-
 import traceback
-import random
 
 # ========================
 # TODO
 # ========================
 '''
 Check for thumb regeneration by date modified on the file?
-
-Thumb menub: Clean db / fix issues
-Other menu: About!
+Thumb menub: Clean db?
+context menu for qlistwidget? https://stackoverflow.com/questions/48890473/how-do-i-make-a-context-menu-for-each-item-in-a-qlistwidget Open in file browser? Delete?
 
 Profiling: python -m cProfile .\HImage.py
-
-context menu for qlistwidget? https://stackoverflow.com/questions/48890473/how-do-i-make-a-context-menu-for-each-item-in-a-qlistwidget Open in file browser? Delete?
 '''
 
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# default location to open
 THUMBDIR = SCRIPT_DIR + "/thumbs"
 DB = SCRIPT_DIR + "/thumbdb.json"
 imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif"]
 parmNames = ["file", "filename", "map", "tex0", "ar_light_color_texture", "env_map"]
-'''
-Multithread Thumbnail creation and insertion
-'''
 
+'''
+Multithreading Thumbnail creation and insertion
+'''
 
 class WorkerSignals(QObject):
     finished = Signal()
@@ -107,7 +97,6 @@ def getImages(p, recurse=False):
 '''
 QMainWindow
 '''
-
 
 class HImageThreaded(QWidget):
     def __init__(self):
@@ -228,15 +217,13 @@ class HImageThreaded(QWidget):
         self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 2)  # don't use all threads?
         print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
 
+        def reset(self):
+            self.treeSignal(self.tree.currentIndex())
+
+
     '''
     Signals for menu bar actions
     '''
-
-    def expandTree(self, idx):
-        self.tree.collapseAll()
-        self.tree.scrollTo(idx, hint=QAbstractItemView.PositionAtTop)
-        self.tree.expand(idx)
-        self.tree.setCurrentIndex(idx)
 
     def setStartupPath(self):
         path = self.dirLineEdit.text()
@@ -296,12 +283,18 @@ class HImageThreaded(QWidget):
         if path is not THUMBDIR:
             self.updateThumbList(path)
 
+    def expandTree(self, idx):
+        self.tree.collapseAll()
+        self.tree.scrollTo(idx, hint=QAbstractItemView.PositionAtTop)
+        self.tree.expand(idx)
+        self.tree.setCurrentIndex(idx)
+
     def dirLineEditUpdate(self, path):
         self.tree.setCurrentIndex(self.model.index(QDir(path).absolutePath()))
         self.updateThumbList(QDir(path).absolutePath())  # also force the listwidget to update
 
     '''
-    Signals for thumb list and preview
+    Signals for thumb list and large preview
     '''
 
     def setSingleThumb(self, path, idx):
@@ -315,14 +308,6 @@ class HImageThreaded(QWidget):
             self.writeThumbDatabase()  # write the json to disk immediately?
         except:
             print("error setting thumbnail or writing to database")
-
-    def updateProgressBar(self, path, idx):
-        try:
-            self.pbar.setValue(self.pbar.value() + 1)
-            self.pbar.setLabelText(str(path))
-            self.writeThumbDatabase()  # write the json to disk
-        except:
-            print("progress bar not found or thumb database write failed")
 
     def updateThumbList(self, path, force=False):
         self.thumblist.clear()
@@ -397,35 +382,6 @@ class HImageThreaded(QWidget):
             print("thumbnail not yet generated")
 
     '''
-    Interaction with Houdini nodes
-    '''
-
-    def pathFromNode(self):
-        if hou.selectedNodes():
-            node = hou.selectedNodes()[0]
-            parms = node.parms()
-            for p in parms:
-                if p.name() in parmNames:
-                    dir = Path(p.evalAsString()).parent
-                    self.dirLineEditUpdate(str(dir))
-                    self.setLargePreview(p.evalAsString())
-
-    def setTexture(self, item):
-        texname = item.data()
-        texpath = self.thumblistdict[texname]
-        QApplication.clipboard().setText(str(texpath).replace("\\", "/"))  # add to clipboard
-        if hou.selectedNodes():
-            node = hou.selectedNodes()[0]
-            parms = node.parms()
-            for p in parms:
-                if p.name() in parmNames:
-                    # if HIP in pathname, replace
-                    hip = hou.expandString("$HIP")
-                    texpath = texpath.replace(hip, "$HIP")
-                    p.set(texpath)
-                    break
-
-    '''
     Thumbnail generation and db handling
     '''
 
@@ -479,8 +435,13 @@ class HImageThreaded(QWidget):
         # self.threadpool.waitForDone()
         # self.writeThumbDatabase() # write the json to disk
 
-    def reset(self):
-        self.treeSignal(self.tree.currentIndex())
+    def updateProgressBar(self, path, idx):
+        try:
+            self.pbar.setValue(self.pbar.value() + 1)
+            self.pbar.setLabelText(str(path))
+            self.writeThumbDatabase()  # write the json to disk
+        except:
+            print("progress bar not found or thumb database write failed")
 
     '''
     Thumbnail Database methods - move these out...?
@@ -516,7 +477,39 @@ class HImageThreaded(QWidget):
             os.remove(str(f))
         self.reset()
 
-    # CLOSING
+    '''
+    Interaction with Houdini nodes
+    '''
+
+    def pathFromNode(self):
+        if hou.selectedNodes():
+            node = hou.selectedNodes()[0]
+            parms = node.parms()
+            for p in parms:
+                if p.name() in parmNames:
+                    dir = Path(p.evalAsString()).parent
+                    self.dirLineEditUpdate(str(dir))
+                    self.setLargePreview(p.evalAsString())
+
+    def setTexture(self, item):
+        texname = item.data()
+        texpath = self.thumblistdict[texname]
+        QApplication.clipboard().setText(str(texpath).replace("\\", "/"))  # add to clipboard
+        if hou.selectedNodes():
+            node = hou.selectedNodes()[0]
+            parms = node.parms()
+            for p in parms:
+                if p.name() in parmNames:
+                    # if HIP in pathname, replace
+                    hip = hou.expandString("$HIP")
+                    texpath = texpath.replace(hip, "$HIP")
+                    p.set(texpath)
+                    break
+
+
+    '''
+    Cleanup on Close
+    '''
     def closeEvent(self, event):
         # print(self.threadpool.activeThreadCount())
         self.threadpool.waitForDone()
