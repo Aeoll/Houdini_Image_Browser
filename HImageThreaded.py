@@ -37,11 +37,8 @@ import random
 # ========================
 '''
 Check for thumb regeneration by date modified on the file?
-Is it better to destroy/create the threadpool only when a directory is selected? Can it cause problems if left empty in the background?
-CRASH ON CLOSING HOUDINI? HOW TO CLEAN QTHREADPOOL?
 
 Thumb menub: Clean db / fix issues
-Goto menu: add current dir to Goto menu with name dialog popup. Default startup path
 Other menu: About!
 
 Profiling: python -m cProfile .\HImage.py
@@ -57,10 +54,10 @@ THUMBDIR = SCRIPT_DIR + "/thumbs"
 DB = SCRIPT_DIR + "/thumbdb.json"
 imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif"]
 parmNames = ["file", "filename", "map", "tex0", "ar_light_color_texture", "env_map"]
-
 '''
 Multithread Thumbnail creation and insertion
 '''
+
 
 class WorkerSignals(QObject):
     finished = Signal()
@@ -121,8 +118,8 @@ class HImageThreaded(QWidget):
         load = self.readThumbDatabase()
         self.thumbdb = defaultdict(dict, load)
 
-        self.thSize = [600, 600]
-        self.thListSize = [100, 100]
+        self.thSize = [700, 700]
+        self.thListSize = [150, 150]
 
         # load UI
         loader = QtUiTools.QUiLoader()
@@ -185,7 +182,7 @@ class HImageThreaded(QWidget):
                 print("statup path not found")
         f.close()
 
-        self.model.setRootPath(str(Path(self.ROOT).drive)) # seems to be required for proper sorting
+        self.model.setRootPath(str(Path(self.ROOT).drive))  # seems to be required for proper sorting
         self.tree.setSortingEnabled(True)
         self.tree.sortByColumn(0, Qt.SortOrder.AscendingOrder)
 
@@ -228,6 +225,7 @@ class HImageThreaded(QWidget):
 
         # Multithreading
         self.threadpool = QThreadPool()
+        self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 2)  # don't use all threads?
         print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
 
     '''
@@ -249,7 +247,7 @@ class HImageThreaded(QWidget):
 
     def addFav(self):
         path = self.dirLineEdit.text()
-        favname, ok = QInputDialog.getText(self, "Add Favourite","Name:", QLineEdit.Normal, "")
+        favname, ok = QInputDialog.getText(self, "Add Favourite", "Name:", QLineEdit.Normal, "")
         if ok and favname:
             self.gotoDict[str(favname)] = str(path)
             action = QAction(str(favname), self)  # needs a parent object in order to work in hou?
@@ -314,11 +312,19 @@ class HImageThreaded(QWidget):
             # th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio) # do we need to use QImage here instead of QPixmap???
             item = self.updateDict[idx]
             item.setIcon(QIcon(th))
+            self.writeThumbDatabase()  # write the json to disk immediately?
         except:
-            print("error setting thumb?")
-        self.writeThumbDatabase()  # write the json to disk immediately?
+            print("error setting thumbnail or writing to database")
 
-    def updateThumbList(self, path):
+    def updateProgressBar(self, path, idx):
+        try:
+            self.pbar.setValue(self.pbar.value() + 1)
+            self.pbar.setLabelText(str(path))
+            self.writeThumbDatabase()  # write the json to disk
+        except:
+            print("progress bar not found or thumb database write failed")
+
+    def updateThumbList(self, path, force=False):
         self.thumblist.clear()
         self.thumblistdict.clear()
         self.updateDict = defaultdict(QListWidget)  # update dict for threadpool
@@ -331,7 +337,7 @@ class HImageThreaded(QWidget):
         imagelist = []
         for p in dirImages:
             if not p.is_dir() and p.suffix[1:] in imExts:
-                if not str(p) in self.thumbdb:
+                if not str(p) in self.thumbdb or force:
                     imagelist.append(p)
 
         self.threadpool.clear()
@@ -352,7 +358,6 @@ class HImageThreaded(QWidget):
 
                 worker = Worker(self.generateThumbnail, idx, str(im))
                 worker.signals.result.connect(self.setSingleThumb)
-                # worker.signals.finished.connect(self.thread_complete)
                 self.threadpool.start(worker)
             else:
                 # For images with existing thumbnails just create the item
@@ -408,7 +413,7 @@ class HImageThreaded(QWidget):
     def setTexture(self, item):
         texname = item.data()
         texpath = self.thumblistdict[texname]
-        QApplication.clipboard().setText(str(texpath))  # add to clipboard
+        QApplication.clipboard().setText(str(texpath).replace("\\", "/"))  # add to clipboard
         if hou.selectedNodes():
             node = hou.selectedNodes()[0]
             parms = node.parms()
@@ -429,7 +434,7 @@ class HImageThreaded(QWidget):
             thumbdir = THUMBDIR + "/" + Path(filepath).parent.name + "_" + Path(filepath).stem + "_thumb.jpg"
             imsize = img.size
             with img.convert('jpg') as i:
-                i.compression_quality = 60
+                i.compression_quality = 55
                 i.transform(resize=str(self.thSize[0]) + 'x' + str(self.thSize[1]) + '>')  # faster than resize
                 i.save(filename=thumbdir)
             key = filepath
@@ -439,54 +444,40 @@ class HImageThreaded(QWidget):
             self.thumbdb[key]['res'] = str(imsize[0]) + " " + str(imsize[1])
             return str(key)
 
-    def thumbFolderGen(self, imagelist, force=False):
-        pass
-    #     if not force:
-    #         imagelist = [p for p in imagelist if not str(p) in self.thumbdb]
-
-    #     if imagelist:
-    #         # progress bar
-    #         pbar = QProgressDialog("Generating Thumbnails", "Abort", 0, len(imagelist))
-    #         pbar.setWindowTitle("Thumbnail Generation Progress")
-    #         pbar.setMinimumSize(QSize(600, 0))
-    #         pbar.setWindowModality(Qt.WindowModal)
-    #         try:
-    #             pbar.setStyleSheet(hou.qt.styleSheet())
-    #             # pbar.setWindowFlags(Qt.FramelessWindowHint)
-    #         except:
-    #             print("hou not imported")
-
-    #         pbar.setValue(0)
-    #         pbar.forceShow()
-
-    #         start = time.time()
-    #         for p in imagelist:
-    #             if pbar.wasCanceled():
-    #                 break
-    #             if not p.is_dir() and p.suffix[1:] in imExts:
-    #                 # if not p in self.thumbdb:
-    #                 if not any(p in d.values() for d in self.thumbdb.values()):
-    #                     self.generateThumbnail(str(p))
-    #                 else:
-    #                     print("thumb exists")
-    #             # progress bar
-    #             pbar.setValue(pbar.value() + 1)
-    #             pbar.setLabelText(str(p))
-    #         end = time.time()
-    #         print(end - start)
-    #         self.writeThumbDatabase()
-
-    def thumbGenNonRecursive(self, force=False):
-        pass
-    #     path = Path(self.dirLineEdit.text())
-    #     images = getImages(path, recurse=True)
-    #     self.thumbFolderGen(images)
+    def thumbGenNonRecursive(self):
+        path = Path(self.dirLineEdit.text())
+        self.updateThumbList(path, True)
 
     def thumbGenRecursive(self, force=False):
-        pass
-    #     path = Path(self.dirLineEdit.text())
-    #     images = getImages(path, recurse=True)
-    #     self.thumbFolderGen(images)
+        path = Path(self.dirLineEdit.text())
+        imagelist = getImages(path, recurse=True)
+        imagelist = [p for p in imagelist if not str(p) in self.thumbdb]  # don't force re-create
+
+        # progress bar
+        self.pbar = QProgressDialog("Generating Thumbnails", "Abort", 0, len(imagelist))
+        self.pbar.setWindowTitle("Thumbnail Generation Progress")
+        self.pbar.setMinimumSize(QSize(600, 0))
+        # self.pbar.setMinimum(0)
+        # self.pbar.setMaximum(0)
+        self.pbar.setValue(0)
+        self.pbar.setWindowModality(Qt.WindowModal)
+        try:
+            self.pbar.setStyleSheet(hou.qt.styleSheet())
+        except:
+            print("hou not imported")
+        self.pbar.forceShow()
+
+        for idx, im in enumerate(imagelist):
+            imname = str(Path(im).name)
+            worker = Worker(self.generateThumbnail, idx, str(im))
+            worker.signals.result.connect(self.updateProgressBar)
+            self.threadpool.start(worker)
+
+        # will this do anything called here..?
+        if self.pbar.wasCanceled():
+            self.threadpool.cancel()
+        # self.threadpool.waitForDone()
+        # self.writeThumbDatabase() # write the json to disk
 
     def reset(self):
         self.treeSignal(self.tree.currentIndex())
@@ -520,15 +511,17 @@ class HImageThreaded(QWidget):
         with open(DB, 'w') as f:
             json.dump(self.thumbdb, f)
         f.close()
+
+        for f in Path(THUMBDIR).glob("*"):
+            os.remove(str(f))
         self.reset()
 
     # CLOSING
     def closeEvent(self, event):
-        print(self.threadpool.activeThreadCount())
+        # print(self.threadpool.activeThreadCount())
         self.threadpool.waitForDone()
         self.threadpool.clear()
         print("closing and clearing threadpool")
-        # close window
         event.accept()
 
 
