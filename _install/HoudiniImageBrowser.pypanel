@@ -7,13 +7,11 @@
  in a single file. -->
   <interface name="HoudiniImageBrowser" label="HoudiniImageBrowser" icon="MISC_python" showNetworkNavigationBar="false" help_url="">
     <script><![CDATA[import sys
-sys.path.append("C:/Users/Lukas/Dropbox/1_HOUDINI/04_Plugins/Houdini_Image_Browser")
+import HImageThreaded
+reload(HImageThreaded)
 
-import HImage
-reload(HImage)
-
-def createInterface():    
-    return HImage.HImage()
+def createInterface():
+    return HImageThreaded.HImageThreaded()
 ]]></script>
     <includeInToolbarMenu menu_position="102" create_separator="false"/>
     <help><![CDATA[]]></help>

@@ -243,9 +243,8 @@
     <property name="title">
      <string>GOTO</string>
     </property>
-    <addaction name="actionAddFavourite"/>
     <addaction name="actionStartup"/>
-    <addaction name="separator"/>
+    <addaction name="actionAddFavourite"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuGoTo"/>

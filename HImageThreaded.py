@@ -42,7 +42,7 @@ Profiling: python -m cProfile .\HImage.py
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 THUMBDIR = SCRIPT_DIR + "/thumbs"
 DB = SCRIPT_DIR + "/thumbdb.json"
-imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif"]
+imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif", "gif", "dpx", "svg"]
 parmNames = ["file", "filename", "map", "tex0", "ar_light_color_texture", "env_map"]
 
 '''
@@ -132,7 +132,7 @@ class HImageThreaded(QWidget):
         self.actionSetStartupPath = self.ui.findChild(QAction, 'actionStartup')
         self.actionSetStartupPath.triggered.connect(self.setStartupPath)
 
-        # Add GoTo's - add goto actions from json file for other paths? not working but no errors??
+        # Add GoTo's
         self.gotoDirs = self.getGotoDirs()
         actions = []
         for key, val in self.gotoDirs.items():
@@ -140,7 +140,9 @@ class HImageThreaded(QWidget):
             action.setData(str(val))
             actions.append(action)
             action.triggered.connect(functools.partial(self.goto, action.data()))
-            self.menuGoto.addAction(action)
+            # self.menuGoto.addAction(action)
+            self.menuGoto.insertAction(self.actionSetStartupPath, action)
+        self.menuGoto.insertSeparator(self.actionSetStartupPath)
 
         # Add thumb size options
         self.menuThumbSizes = self.ui.findChild(QMenu, 'menuThumbnail_Size')
@@ -217,8 +219,8 @@ class HImageThreaded(QWidget):
         self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 2)  # don't use all threads?
         print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
 
-        def reset(self):
-            self.treeSignal(self.tree.currentIndex())
+    def reset(self):
+        self.treeSignal(self.tree.currentIndex())
 
 
     '''
@@ -523,3 +525,9 @@ if __name__ == "__main__":
     window = HImageThreaded()
     window.show()
     sys.exit(app.exec_())
+
+# ALSO SEE http://euanfreeman.co.uk/pyqt-qpixmap-and-threads/
+# AND https://stackoverflow.com/questions/45157006/python-pyqt-pulsing-progress-bar-with-multithreading OR https://stackoverflow.com/questions/20657753/python-pyside-and-progress-bar-threading
+# https://stackoverflow.com/questions/42673010/how-to-correctly-load-images-asynchronously-in-pyqt5
+# https://www.twobitarcade.net/article/multithreading-pyqt-applications-with-qthreadpool/
+# https://www.twobitarcade.net/article/qt-transmit-extra-data-with-signals/

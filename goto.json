@@ -1,8 +1,4 @@
 {
-    "HDRIs": "Z:/_MvsM_Resource/_3D_Assets/_HDRI", 
-    "HIP": "$HIP", 
-    "HOME": "$HOME", 
-    "TEST": "Z:/_MvsM_Resource/_3D_Assets/_Tex-Library/_SUBSTANCE_DESIGNER/sbsbar/aluminium_foil", 
-    "TexLibrary": "Z:/_MvsM_Resource/_3D_Assets/_Tex-Library", 
-    "TexSubstance": "Z:/_MvsM_Resource/_3D_Assets/_Tex-Library/_SUBSTANCE_DESIGNER/sbsbar"
+    "HIP": "$HIP",
+    "HOME": "$HOME"
 }
