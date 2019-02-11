@@ -107,7 +107,7 @@ class HImageThreaded(QWidget):
         load = self.readThumbDatabase()
         self.thumbdb = defaultdict(dict, load)
 
-        self.thSize = [700, 700]
+        self.thSize = [650, 650]
         self.thListSize = [150, 150]
 
         # load UI
@@ -392,7 +392,8 @@ class HImageThreaded(QWidget):
             thumbdir = THUMBDIR + "/" + Path(filepath).parent.name + "_" + Path(filepath).stem + "_thumb.jpg"
             imsize = img.size
             with img.convert('jpg') as i:
-                i.compression_quality = 55
+                # i.compression_quality = 55
+                i.compression_quality = 73
                 i.transform(resize=str(self.thSize[0]) + 'x' + str(self.thSize[1]) + '>')  # faster than resize
                 i.save(filename=thumbdir)
             key = filepath

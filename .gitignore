@@ -1,5 +1,6 @@
-thumbs
+thumbs/*
 .vscode
 BU
 red
 ROOT_B
+*.pyc
