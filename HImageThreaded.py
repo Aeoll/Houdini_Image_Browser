@@ -33,6 +33,7 @@ import traceback
 '''
 Check for thumb regeneration by date modified on the file?
 Thumb menub: Clean db?
+GOTO: Remove current folder from favourites
 context menu for qlistwidget? https://stackoverflow.com/questions/48890473/how-do-i-make-a-context-menu-for-each-item-in-a-qlistwidget Open in file browser? Delete?
 
 Profiling: python -m cProfile .\HImage.py
@@ -106,9 +107,14 @@ class HImageThreaded(QWidget):
         # load thumbnail database
         load = self.readThumbDatabase()
         self.thumbdb = defaultdict(dict, load)
+        # load config
+        with open(SCRIPT_DIR + "/config.json", 'r') as f:
+            self.config = json.load(f)
+        f.close()
 
         self.thSize = [650, 650]
-        self.thListSize = [150, 150]
+        tlsz = int(self.config['StartupThumbListSize'])
+        self.thListSize = [tlsz, tlsz]
 
         # load UI
         loader = QtUiTools.QUiLoader()
@@ -129,24 +135,26 @@ class HImageThreaded(QWidget):
 
         self.actionAddFav = self.ui.findChild(QAction, 'actionAddFavourite')
         self.actionAddFav.triggered.connect(self.addFav)
+        self.actionRemFav = self.ui.findChild(QAction, 'actionRemFavourite')
+        self.actionRemFav.triggered.connect(self.remFav)
         self.actionSetStartupPath = self.ui.findChild(QAction, 'actionStartup')
         self.actionSetStartupPath.triggered.connect(self.setStartupPath)
 
         # Add GoTo's
         self.gotoDirs = self.getGotoDirs()
-        actions = []
+        self.actions = []
         for key, val in self.gotoDirs.items():
             action = QAction(str(key), self)  # needs a parent object in order to work in hou?
             action.setData(str(val))
-            actions.append(action)
+            self.actions.append(action)
             action.triggered.connect(functools.partial(self.goto, action.data()))
             # self.menuGoto.addAction(action)
             self.menuGoto.insertAction(self.actionSetStartupPath, action)
-        self.menuGoto.insertSeparator(self.actionSetStartupPath)
+        self.gotoSep = self.menuGoto.insertSeparator(self.actionSetStartupPath)
 
         # Add thumb size options
         self.menuThumbSizes = self.ui.findChild(QMenu, 'menuThumbnail_Size')
-        sizes = [50, 100, 150, 200]
+        sizes = [50, 100, 150, 200, 250, 300]
         for s in sizes:
             action = QAction(str(s), self)  # needs a parent object in order to work in hou?
             action.setData(s)
@@ -164,14 +172,11 @@ class HImageThreaded(QWidget):
             self.tree.hideColumn(c)  # hide all columns except name..?
 
         # navigate to the startup/ROOT filepath
-        with open(SCRIPT_DIR + "/config.json", 'r') as f:
-            self.config = json.load(f)
-            self.ROOT = self.config['StartupPath']
-            try:
-                idx = self.model.index(QDir(self.ROOT).absolutePath())
-            except:
-                print("statup path not found")
-        f.close()
+        self.ROOT = self.config['StartupPath']
+        try:
+            idx = self.model.index(QDir(self.ROOT).absolutePath())
+        except:
+            print("statup path not found")
 
         self.model.setRootPath(str(Path(self.ROOT).drive))  # seems to be required for proper sorting
         self.tree.setSortingEnabled(True)
@@ -242,9 +247,20 @@ class HImageThreaded(QWidget):
             action = QAction(str(favname), self)  # needs a parent object in order to work in hou?
             action.setData(str(path))
             action.triggered.connect(functools.partial(self.goto, action.data()))
-            self.menuGoto.addAction(action)
+            self.actions.append(action)
+            # self.menuGoto.addAction(action)
+            self.menuGoto.insertAction(self.gotoSep, action)
             self.writeGotoDirs()
         pass
+
+    # Not working yet
+    def remFav(self):
+        path = self.dirLineEdit.text()
+        for a in self.actions:
+            if str(a.data()) == path:
+                del self.gotoDict[str(a.text())]
+                self.menuGoto.removeAction(a)
+                self.writeGotoDirs()
 
     def getGotoDirs(self):
         self.gotoDict = None
@@ -273,6 +289,10 @@ class HImageThreaded(QWidget):
 
     def thumbSizing(self, size):
         self.thListSize = [size, size]
+        self.config['StartupThumbListSize'] = str(size)
+        with open(SCRIPT_DIR + "/config.json", 'w') as f:
+            json.dump(self.config, f, indent=4, sort_keys=True)
+        f.close()
         self.reset()
 
     '''
