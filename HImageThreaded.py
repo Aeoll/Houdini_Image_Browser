@@ -44,7 +44,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 THUMBDIR = SCRIPT_DIR + "/thumbs"
 DB = SCRIPT_DIR + "/thumbdb.json"
 imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif", "gif", "dpx", "svg"]
-parmNames = ["file", "filename", "map", "tex0", "ar_light_color_texture", "env_map"]
+parmNames = ["file", "filename", "map", "path", "tex0", "ar_light_color_texture", "env_map"]
 
 '''
 Multithreading Thumbnail creation and insertion
