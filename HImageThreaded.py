@@ -51,7 +51,7 @@ Multithreading Thumbnail creation and insertion
 '''
 
 class WorkerSignals(QObject):
-    finished = Signal()
+    finished = Signal(object, int)
     error = Signal(tuple)
     result = Signal(object, int)
 
@@ -79,7 +79,7 @@ class Worker(QRunnable):
         else:
             self.signals.result.emit(result, self.idx)
         finally:
-            self.signals.finished.emit()
+            self.signals.finished.emit(result, self.idx)
 
 
 def getImages(p, recurse=False):
@@ -220,13 +220,10 @@ class HImageThreaded(QWidget):
         self.setLayout(mainLayout)
 
         # Multithreading
-        self.threadpool = QThreadPool()
-        self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 2)  # don't use all threads?
-        print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
+        self.threadpool = None
 
     def reset(self):
         self.treeSignal(self.tree.currentIndex())
-
 
     '''
     Signals for menu bar actions
@@ -327,7 +324,7 @@ class HImageThreaded(QWidget):
             # th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio) # do we need to use QImage here instead of QPixmap???
             item = self.updateDict[idx]
             item.setIcon(QIcon(th))
-            self.writeThumbDatabase()  # write the json to disk immediately?
+            # self.writeThumbDatabase()  # write the json to disk immediately?
         except:
             print("error setting thumbnail or writing to database")
 
@@ -347,7 +344,15 @@ class HImageThreaded(QWidget):
                 if not str(p) in self.thumbdb or force:
                     imagelist.append(p)
 
-        self.threadpool.clear()
+        if imagelist:
+            if not self.threadpool:
+                self.threadpool = QThreadPool()
+                self.threadpool.setExpiryTimeout(3000)
+                self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 6)  # don't use all threads?
+                # self.threadpool.setMaxThreadCount(16)  # don't use all threads?
+                print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
+            else:
+                self.threadpool.clear()
 
         for idx, im in enumerate(dirImages):
             # For images which need thumbs to be generated
@@ -446,17 +451,27 @@ class HImageThreaded(QWidget):
             print("hou not imported")
         self.pbar.forceShow()
 
+        if not self.threadpool:
+            self.threadpool = QThreadPool()
+            self.threadpool.setExpiryTimeout(3000)
+            self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 6)  # don't use all threads?
+        else:
+            self.threadpool.clear()
+
         for idx, im in enumerate(imagelist):
             imname = str(Path(im).name)
             worker = Worker(self.generateThumbnail, idx, str(im))
-            worker.signals.result.connect(self.updateProgressBar)
+            # worker.signals.result.connect(self.updateProgressBar)
+            worker.signals.finished.connect(self.updateProgressBar)
             self.threadpool.start(worker)
 
         # will this do anything called here..?
         if self.pbar.wasCanceled():
             self.threadpool.cancel()
-        # self.threadpool.waitForDone()
-        # self.writeThumbDatabase() # write the json to disk
+            self.writeThumbDatabase() # write the json to disk
+        # if self.threadpool.waitForDone():
+            # self.writeThumbDatabase() # write the json to disk
+            # print("completed")
 
     def updateProgressBar(self, path, idx):
         try:
@@ -529,17 +544,19 @@ class HImageThreaded(QWidget):
                     p.set(texpath)
                     break
 
-
     '''
     Cleanup on Close
     '''
     def closeEvent(self, event):
         # print(self.threadpool.activeThreadCount())
-        self.threadpool.waitForDone()
-        self.threadpool.clear()
+        try:
+            self.threadpool.waitForDone()
+            self.threadpool.clear()
+        except:
+            print("threadpool already deleted")
+        self.writeThumbDatabase()
         print("closing and clearing threadpool")
         event.accept()
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -552,3 +569,7 @@ if __name__ == "__main__":
 # https://stackoverflow.com/questions/42673010/how-to-correctly-load-images-asynchronously-in-pyqt5
 # https://www.twobitarcade.net/article/multithreading-pyqt-applications-with-qthreadpool/
 # https://www.twobitarcade.net/article/qt-transmit-extra-data-with-signals/
+
+# for interval events, could use a QTimer
+# eg check threadpool for activity and pause/delete it if needed?
+# or writing thumb db?
