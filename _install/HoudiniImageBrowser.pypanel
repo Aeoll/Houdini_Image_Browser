@@ -7,7 +7,7 @@
  in a single file. -->
   <interface name="HoudiniImageBrowser" label="HoudiniImageBrowser" icon="MISC_python" showNetworkNavigationBar="false" help_url="">
     <script><![CDATA[import sys
-import HImageThreaded
+from Houdini_Image_Browser import HImageThreaded
 reload(HImageThreaded)
 
 def createInterface():
