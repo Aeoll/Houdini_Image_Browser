@@ -216,7 +216,6 @@ class HImageThreaded(QWidget):
         self.filter_lineedit = self.ui.findChild(QLineEdit, 'imagefilter_lineedit')
         self.filter_lineedit.textChanged.connect(self.filterImages)
 
-        # self.thumblist.setSizeAdjustPolicy(QListWidget.AdjustToContents)
         self.thumblistdict = {}  # Dict mapping full path to image basename
 
         # remove margins and status bar
@@ -232,8 +231,6 @@ class HImageThreaded(QWidget):
 
         # Multithreading
         self.threadpool = None
-
-        print("DONE??")
 
     def reset(self):
         self.treeSignal(self.tree.currentIndex())
@@ -417,6 +414,7 @@ class HImageThreaded(QWidget):
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
                 item.setTextAlignment(Qt.AlignHCenter | Qt.AlignBottom)
                 self.thumblist.addItem(item)
+                self.thumblistdict[imname] = str(im)
                 self.updateDict[idx] = item  # add the queued listitem to a widget so it can be updated properly
 
                 worker = Worker(self.generateThumbnail, idx, str(im))
@@ -432,6 +430,7 @@ class HImageThreaded(QWidget):
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
                 item.setTextAlignment(Qt.AlignHCenter | Qt.AlignBottom)
                 self.thumblist.addItem(item)
+                self.thumblistdict[imname] = str(im)
 
     def filterImages(self):
         search_string = self.filter_lineedit.text()
@@ -456,10 +455,9 @@ class HImageThreaded(QWidget):
 
     def setLargePreview(self, item):
         texname = item.data()
-        thumb_name_hashed = hashlib.md5(str(texname).replace('\\', '/').encode('utf-8')).hexdigest()
-        # texpath = self.thumblistdict[texname]
+        texpath = self.thumblistdict[texname]
+        thumb_name_hashed = hashlib.md5(str(texpath).replace('\\', '/').encode('utf-8')).hexdigest()
         try:
-            # thumbname = self.thumbdb[texpath]['thumb']
             thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
             jpg = QPixmap(thumbname)
             w = self.thumblargepreview.geometry().width()
@@ -468,7 +466,7 @@ class HImageThreaded(QWidget):
             jpg = self.fitFrame(jpg, size.width(), size.height(), w, h)
             self.thumblargepreview.setPixmap(jpg)
             # self.image_info.setText("Image Size: " + self.thumbdb[texpath]['res'].replace(" ", " x "))  # set image size info
-            self.image_info.setText("Image Size: TODO")  # set image size info
+            self.image_info.setText("Image Size: N/A")  # set image size info
         except:
             print("thumbnail not yet generated")
 
