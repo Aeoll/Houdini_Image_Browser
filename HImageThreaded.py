@@ -1,9 +1,5 @@
 from __future__ import print_function
-import sys
-import time
-import os
-import json
-import time
+import sys, time, os, json, time, hashlib
 from collections import defaultdict
 import functools
 
@@ -31,15 +27,16 @@ import traceback
 # TODO
 # ========================
 '''
-Option to recurse subfolders (dangerous? limit this or disable or something)
+QFileSystemModel / QTreeView is very slow on large network drives?
+
+JSON Dict lookup has been removed and thumb key-value (path-thumbpath) lookup is now done with a hash
+Recursive Thumb generation not tested yet with this. image size label not working yet
 
 search functionality in the list view?
 https://stackoverflow.com/questions/53772564/filter-search-a-qfilesystemmodel-in-a-qlistfiew-qsortfilterproxymodel-maybe
 
 Only multithread for larger numbers of images? >5?
 Check for thumb regeneration by date modified on the file?
-
-GOTO: Remove current folder from favourites
 
 Profiling: python -m cProfile .\HImage.py
 '''
@@ -112,25 +109,14 @@ class HImageThreaded(QWidget):
         scriptpath = os.path.dirname(os.path.realpath(__file__))
 
         # load thumbnail database
-        load = self.readThumbDatabase()
-        self.prevdb = defaultdict(dict, load) # for comparisons when saving to disk?
+        load = dict()
+        self.prevdb = defaultdict(dict, load)  # for comparisons when saving to disk?
         self.thumbdb = defaultdict(dict, load)
-
-        # save a backup of the thumbdb in case of corruption?
-        with open(SCRIPT_DIR + "/thumbdb_backup.json", 'w') as f:
-            json.dump(self.prevdb, f)
 
         # load config
         with open(SCRIPT_DIR + "/config.json", 'r') as f:
             self.config = json.load(f)
         f.close()
-
-        # Timer for periodically writing the thumbdb to the json file
-        # avoids destroying the json file which happens when this is called in the multithreaded code?
-        self.timer = QTimer()
-        self.timer.setInterval(5000) #5secs
-        self.timer.timeout.connect(self.writeThumbDatabase)
-        self.timer.start()
 
         self.thSize = [650, 650]
         tlsz = int(self.config['StartupThumbListSize'])
@@ -146,7 +132,6 @@ class HImageThreaded(QWidget):
         self.actionThumbRecursive = self.ui.findChild(QAction, 'actionCreate_Thumbs_for_Directory')
         self.actionThumbRecursive.triggered.connect(self.thumbGenRecursive)
         self.actionClearThumb = self.ui.findChild(QAction, 'actionClear_Thumb_Database')
-        self.actionClearThumb.triggered.connect(self.clearThumbDatabase)
         self.actionRecreateThumbs = self.ui.findChild(QAction, 'actionRefresh_Current_Dir')
         self.actionRecreateThumbs.triggered.connect(self.thumbGenNonRecursive)
 
@@ -199,9 +184,9 @@ class HImageThreaded(QWidget):
             print("statup path not found")
 
         self.model.setRootPath(str(Path(self.ROOT).drive))  # seems to be required for proper sorting
-        self.tree.setSortingEnabled(True)
-        self.tree.sortByColumn(0, Qt.SortOrder.AscendingOrder)
-
+        self.tree.setSortingEnabled(False)
+        # self.tree.setSortingEnabled(True)
+        # self.tree.sortByColumn(0, Qt.SortOrder.AscendingOrder)
         self.tree.collapseAll()
         self.expandTree(idx)  # doesnt scroll properly on initial load?
         self.tree.pressed.connect(self.treeSignal)  # prevents this firing twice on double click
@@ -247,6 +232,8 @@ class HImageThreaded(QWidget):
 
         # Multithreading
         self.threadpool = None
+
+        print("DONE??")
 
     def reset(self):
         self.treeSignal(self.tree.currentIndex())
@@ -377,22 +364,21 @@ class HImageThreaded(QWidget):
     '''
 
     def setSingleThumb(self, path, idx):
-        thumbpath = self.thumbdb[str(path)]['thumb']
+        # thumbpath = self.thumbdb[str(path)]['thumb']
+        thumb_name_hashed = hashlib.md5(str(path).replace('\\', '/').encode('utf-8')).hexdigest()
         try:
-            qim = QImage(thumbpath)
+            qim = QImage(THUMBDIR + "/" + thumb_name_hashed + ".jpg")
             th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
-            # th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio) # do we need to use QImage here instead of QPixmap???
             item = self.updateDict[idx]
             item.setIcon(QIcon(th))
-            # self.writeThumbDatabase()  # write the json to disk immediately? seems bad but won't work otherwise?
         except:
-            print("error setting thumbnail or writing to database")
+            pass
+            # print("error setting thumbnail")
 
     def updateThumbList(self, path, force=False):
         self.thumblist.clear()
         self.thumblistdict.clear()
         self.updateDict = defaultdict(QListWidget)  # update dict for threadpool
-
         dirImages = getImages(Path(path))
         self.dir_info.setText("Images in Folder: " + str(len(dirImages)))
         self.thumblargepreview.clear()  # always clear this?
@@ -401,7 +387,10 @@ class HImageThreaded(QWidget):
         imagelist = []
         for p in dirImages:
             if not p.is_dir() and p.suffix[1:] in imExts:
-                if not str(p) in self.thumbdb or force:
+                #filter for thumb creation here?
+                thumb_name_hashed = hashlib.md5(str(p).replace('\\', '/').encode('utf-8')).hexdigest()
+                thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
+                if not Path(thumbname).exists():
                     imagelist.append(p)
 
         if imagelist:
@@ -409,7 +398,6 @@ class HImageThreaded(QWidget):
                 self.threadpool = QThreadPool()
                 self.threadpool.setExpiryTimeout(3000)
                 self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 4)  # don't use all threads?
-                # self.threadpool.setMaxThreadCount(16)  # don't use all threads?
                 # print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
             else:
                 self.threadpool.clear()
@@ -427,26 +415,23 @@ class HImageThreaded(QWidget):
                 item = QListWidgetItem(def_ic, str(imname))
                 item.setToolTip(str(imname))
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
-                item.setTextAlignment( Qt.AlignHCenter | Qt.AlignBottom );
+                item.setTextAlignment(Qt.AlignHCenter | Qt.AlignBottom)
                 self.thumblist.addItem(item)
-                self.thumblistdict[imname] = str(im)
                 self.updateDict[idx] = item  # add the queued listitem to a widget so it can be updated properly
 
                 worker = Worker(self.generateThumbnail, idx, str(im))
                 worker.signals.result.connect(self.setSingleThumb)
                 self.threadpool.start(worker)
             else:
-                # For images with existing thumbnails just create the item
-                thumbpath = self.thumbdb[str(im)]['thumb']
-                th = QPixmap(thumbpath).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+                thumb_name_hashed = hashlib.md5(str(im).replace('\\', '/').encode('utf-8')).hexdigest()
+                thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
+                th = QPixmap(thumbname).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
                 imname = str(Path(im).name)
                 item = QListWidgetItem(QIcon(th), str(imname))
                 item.setToolTip(str(imname))
                 item.setSizeHint(QSize(self.thListSize[0], self.thListSize[1] + 25))
-                item.setTextAlignment( Qt.AlignHCenter | Qt.AlignBottom );
+                item.setTextAlignment(Qt.AlignHCenter | Qt.AlignBottom)
                 self.thumblist.addItem(item)
-                self.thumblistdict[imname] = str(im)
-
 
     def filterImages(self):
         search_string = self.filter_lineedit.text()
@@ -471,16 +456,19 @@ class HImageThreaded(QWidget):
 
     def setLargePreview(self, item):
         texname = item.data()
-        texpath = self.thumblistdict[texname]
+        thumb_name_hashed = hashlib.md5(str(texname).replace('\\', '/').encode('utf-8')).hexdigest()
+        # texpath = self.thumblistdict[texname]
         try:
-            thumbname = self.thumbdb[texpath]['thumb']
+            # thumbname = self.thumbdb[texpath]['thumb']
+            thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
             jpg = QPixmap(thumbname)
             w = self.thumblargepreview.geometry().width()
             h = self.thumblargepreview.geometry().height()
             size = jpg.size()
             jpg = self.fitFrame(jpg, size.width(), size.height(), w, h)
             self.thumblargepreview.setPixmap(jpg)
-            self.image_info.setText("Image Size: " + self.thumbdb[texpath]['res'].replace(" ", " x "))  # set image size info
+            # self.image_info.setText("Image Size: " + self.thumbdb[texpath]['res'].replace(" ", " x "))  # set image size info
+            self.image_info.setText("Image Size: TODO")  # set image size info
         except:
             print("thumbnail not yet generated")
 
@@ -490,18 +478,18 @@ class HImageThreaded(QWidget):
 
     def generateThumbnail(self, filepath):
         with Image(filename=filepath) as img:
-            thumbdir = THUMBDIR + "/" + Path(filepath).parent.name + "_" + Path(filepath).stem + "_thumb.jpg"
+            name_hash = hashlib.md5(filepath.replace('\\', '/').encode('utf-8')).hexdigest()
+            thumb_filename_hashed = THUMBDIR + "/" + name_hash + ".jpg"
+
+            # do not recreate the thumb if it exists. could do this earlier on?
+            # if not Path(thumb_filename_hashed).exists():
             imsize = img.size
             with img.convert('jpg') as i:
                 i.compression_quality = 68
                 i.transform(resize=str(self.thSize[0]) + 'x' + str(self.thSize[1]) + '>')  # faster than resize
-                i.save(filename=thumbdir)
+                # i.save(filename=thumbdir)
+                i.save(filename=thumb_filename_hashed)
             key = filepath
-            # use nested defaultdict to store osme metadata
-            self.thumbdb[key]['thumb'] = str(thumbdir)
-            self.thumbdb[key]['thumbres'] = str(self.thSize[0]) + " " + str(self.thSize[1])  #also add thumb size?
-            self.thumbdb[key]['res'] = str(imsize[0]) + " " + str(imsize[1])
-            # self.writeThumbDatabase()  # write the json to disk immediately? seems bad but won't work otherwise?
             return str(key)
 
     def thumbGenNonRecursive(self):
@@ -513,7 +501,7 @@ class HImageThreaded(QWidget):
         path = Path(self.dirLineEdit.text())
         imagelist = getImages(path, recurse=True)
         print(len(imagelist))
-        imagelist = [p for p in imagelist if not str(p) in self.thumbdb]  # don't force re-create
+        imagelist = [p for p in imagelist]  # don't force re-create
         print("retrieved image list")
 
         if imagelist:
@@ -548,54 +536,12 @@ class HImageThreaded(QWidget):
                 worker.signals.finished.connect(self.updateProgressBar)
                 self.threadpool.start(worker)
 
-                # self.writeThumbDatabase()  # write the json to disk
-
     def updateProgressBar(self, path, idx):
         try:
             self.pbar.setValue(self.pbar.value() + 1)
             self.pbar.setLabelText(str(path))
-            if (self.pbar.value() % 25 == 0):
-                self.writeThumbDatabase()  # write the json to disk, at regular intervals?
         except:
             print("progress bar not found or thumb database write failed")
-
-    '''
-    Thumbnail Database methods - move these out...?
-    '''
-
-    def readThumbDatabase(self):
-        db = None
-        with open(DB, 'r') as f:
-            db = json.load(f)
-        f.close()
-        return db
-
-    def writeThumbDatabase(self):
-        if ( self.prevdb == self.thumbdb ):
-            # do not write if the version on disk matches the current one
-            pass
-        else:
-            self.prevdb = self.thumbdb.copy() # set the previous to this new one..
-            # dbcopy = self.thumbdb.copy()  # get shallow copy of the current thumbdb
-            with open(DB, 'w') as f:
-                # json.dump(self.prevdb, f, indent=4, sort_keys=True)
-                json.dump(self.prevdb, f)
-            f.close()
-
-    def clearThumbDatabase(self):
-        for key, value in self.thumbdb.iteritems():  #this wont work in python3 which uses items(S)
-            try:
-                os.remove(value)
-            except:
-                print("item not found - already deleted?")
-        self.thumbdb.clear()
-        with open(DB, 'w') as f:
-            json.dump(self.thumbdb, f)
-        f.close()
-
-        for f in Path(THUMBDIR).glob("*"):
-            os.remove(str(f))
-        self.reset()
 
     '''
     Interaction with Houdini nodes
@@ -629,8 +575,6 @@ class HImageThreaded(QWidget):
         self._applyTex(texpath)
 
     def sendToCOPs(self, item):
-        # item.data(Qt.UserRole)
-        # texname = item.data()
         texname = item.text()
         texpath = self.thumblistdict[texname]
         print(texpath)
@@ -647,20 +591,17 @@ class HImageThreaded(QWidget):
 
         # link the parm
         self._applyTex("op:" + comp.path() + "/" + out.name())
-        # node.parm('tex0').set("op:" + comp.path() + "/" + out.name())
 
     '''
     Cleanup on Close
     '''
 
     def closeEvent(self, event):
-        # print(self.threadpool.activeThreadCount())
         try:
             self.threadpool.waitForDone()
             self.threadpool.clear()
         except:
             print("threadpool already deleted")
-        self.writeThumbDatabase()
         print("closing and clearing threadpool")
         event.accept()
 
