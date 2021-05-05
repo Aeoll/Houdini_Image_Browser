@@ -1,0 +1,11 @@
+{
+    "enable" : true,
+	"env": [
+        {
+			"HOUDINI_IMAGE_BROWSER": "path/to/root"
+        }
+	],
+	"path": [
+        "$HOUDINI_IMAGE_BROWSER"
+    ]
+}

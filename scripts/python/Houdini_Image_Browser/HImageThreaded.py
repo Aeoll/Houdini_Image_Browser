@@ -7,7 +7,6 @@ try:
     from pathlib import *
 except ImportError:
     from pathlib2 import *
-# https://www.sidefx.com/forum/topic/59279/?page=1#post-265525
 try:
     import hou
 except:
@@ -18,19 +17,19 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 from PySide2.QtCore import *
 from PySide2 import QtUiTools
+
 # Wand
 from wand.image import Image
 from wand.display import display
 import traceback
 
-# ========================
-# TODO
-# ========================
 '''
-QFileSystemModel / QTreeView is very slow on large network drives?
+TODO
 
 JSON Dict lookup has been removed and thumb key-value (path-thumbpath) lookup is now done with a hash
-Recursive Thumb generation not tested yet with this. image size label not working yet
+Recursive Thumb generation not tested yet with this. image size label not working yet?
+
+QFileSystemModel / QTreeView can be slow on network drives due to large numbers of small files?
 
 search functionality in the list view?
 https://stackoverflow.com/questions/53772564/filter-search-a-qfilesystemmodel-in-a-qlistfiew-qsortfilterproxymodel-maybe
@@ -41,11 +40,9 @@ Check for thumb regeneration by date modified on the file?
 Profiling: python -m cProfile .\HImage.py
 '''
 
-# Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-THUMBDIR = SCRIPT_DIR + "/thumbs"
-DB = SCRIPT_DIR + "/thumbdb.json"
-# hardcoded lists
+THUMBDIR = SCRIPT_DIR + "/thumbs" # default thumb location
+
 imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif", "gif", "dpx", "svg"]
 parmNames = ["file", "filename", "map", "path", "tex0", "ar_light_color_texture", "env_map", "TextureSampler1_tex0"]
 
@@ -121,6 +118,16 @@ class HImageThreaded(QWidget):
         self.thSize = [650, 650]
         tlsz = int(self.config['StartupThumbListSize'])
         self.thListSize = [tlsz, tlsz]
+
+        # custom thumbnail save location
+        global THUMBDIR
+        if self.config['ThumbPath'] != "":
+            try:
+                p = Path(self.config['ThumbPath']).joinpath("thumbs")
+                THUMBDIR = str(p)
+                p.mkdir(parents=True)
+            except:
+                print("Custom Thumb Path not valid")
 
         # load UI
         loader = QtUiTools.QUiLoader()
@@ -576,7 +583,6 @@ class HImageThreaded(QWidget):
         texname = item.text()
         texpath = self.thumblistdict[texname]
         print(texpath)
-
         comp = hou.node('/img').createNode('img', "coptexture")
         comp.moveToGoodPosition()
         file = comp.createNode('file')
@@ -586,8 +592,6 @@ class HImageThreaded(QWidget):
         out.moveToGoodPosition()
         out.setInput(0, file, 0)
         file.parm('filename1').set(texpath)
-
-        # link the parm
         self._applyTex("op:" + comp.path() + "/" + out.name())
 
     '''
