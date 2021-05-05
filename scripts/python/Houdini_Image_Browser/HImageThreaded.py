@@ -20,7 +20,6 @@ from PySide2 import QtUiTools
 
 # Wand
 from wand.image import Image
-from wand.display import display
 import traceback
 
 '''
@@ -105,6 +104,14 @@ class HImageThreaded(QWidget):
         super(HImageThreaded, self).__init__()
         scriptpath = os.path.dirname(os.path.realpath(__file__))
 
+        # check for ImageMagick Install
+        if not os.environ.get('MAGICK_HOME'):
+            m = QMessageBox()
+            m.setText("ImageMagick Install not found - please install and set 'MAGICK_HOME' Environment Variable:")
+            m.setInformativeText("https://docs.wand-py.org/en/0.6.6/guide/install.html#install-imagemagick-on-windows")
+            m.setStandardButtons(QMessageBox.Ok)
+            m.exec_()
+
         # load thumbnail database
         load = dict()
         self.prevdb = defaultdict(dict, load)  # for comparisons when saving to disk?
@@ -125,7 +132,8 @@ class HImageThreaded(QWidget):
             try:
                 p = Path(self.config['ThumbPath']).joinpath("thumbs")
                 THUMBDIR = str(p)
-                p.mkdir(parents=True)
+                if not p.exists():
+                    p.mkdir(parents=True)
             except:
                 print("Custom Thumb Path not valid")
 
