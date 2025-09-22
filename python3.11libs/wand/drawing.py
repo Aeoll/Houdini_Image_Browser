@@ -11,7 +11,8 @@ import ctypes
 import numbers
 
 from . import assertions
-from .api import AffineMatrix, PointInfo, library
+from .cdefs.structures import AffineMatrix, PointInfo
+from .api import library
 from .color import Color
 from .compat import abc, binary, string_type, text, text_type, xrange
 from .exceptions import WandLibraryVersionError
@@ -89,9 +90,6 @@ FONT_METRICS_ATTRIBUTES = ('character_width', 'character_height', 'ascender',
                            'descender', 'text_width', 'text_height',
                            'maximum_horizontal_advance', 'x1', 'y1', 'x2',
                            'y2', 'x', 'y')
-
-#: The tuple subtype which consists of font metrics data.
-FontMetrics = collections.namedtuple('FontMetrics', FONT_METRICS_ATTRIBUTES)
 
 #: (:class:`collections.abc.Sequence`) The list of stretch types for fonts
 #:
@@ -365,8 +363,8 @@ class Drawing(Resource):
 
     @property
     def font_resolution(self):
-        """(:class:`~collections.abc.Sequence`) The current font resolution. It also
-        can be set.
+        """(:class:`~collections.abc.Sequence`) The current font resolution.
+        It also can be set.
 
         .. versionadded:: 0.4.0
         """
@@ -895,8 +893,8 @@ class Drawing(Resource):
         library.DrawAffine(self.resource, ctypes.byref(amx))
 
     def alpha(self, x=None, y=None, paint_method='undefined'):
-        """Paints on the image's opacity channel in order to set effected pixels
-        to transparent.
+        """Paints on the image's opacity channel in order to set effected
+        pixels to transparent.
 
          To influence the opacity of pixels. The available methods are:
 
@@ -1145,7 +1143,15 @@ class Drawing(Resource):
                             rotation_start, rotation_end)
 
     def get_font_metrics(self, image, text, multiline=False):
-        """Queries font metrics from the given ``text``.
+        """Queries font metrics by cloning the ``image``, and rendering
+        the ``text`` with the font properties defined on :class:`Drawing`.
+
+        This is useful for determining the size of the rendered text. Set
+        ``multiline`` to ``True`` if the given ``text`` contains line-breaks.
+
+        The return value is an instance of :class:`FontMetrics` which
+        has the attributes of the text's rendered size, max horizontal advance,
+        and distance of ascent & descent from the baseline.
 
         :param image: the image to be drawn
         :type image: :class:`~wand.image.BaseImage`
@@ -1153,7 +1159,9 @@ class Drawing(Resource):
         :type text: :class:`basestring`
         :param multiline: text is multiline or not
         :type multiline: `boolean`
+        :returns: :class:`FontMetrics`
 
+        .. versionadded:: 0.3.0
         """
         if not isinstance(image, BaseImage):
             raise TypeError('image must be a wand.image.BaseImage instance,'
@@ -1198,8 +1206,8 @@ class Drawing(Resource):
                          int(end_x), int(end_y))
 
     def matte(self, x=0.0, y=0.0, paint_method='undefined'):
-        """Paints on the image's opacity channel in order to set effected pixels
-        to transparent.
+        """Paints on the image's opacity channel in order to set effected
+        pixels to transparent.
 
          To influence the opacity of pixels. The available methods are:
 
@@ -1690,9 +1698,10 @@ class Drawing(Resource):
         library.DrawPushClipPath(self.resource, binary(clip_mask_id))
 
     def push_defs(self):
-        """Indicates that commands up to a terminating :class:`Drawing.pop_defs`
-        command create named elements (e.g. clip-paths, textures, etc.) which
-        may safely be processed earlier for the sake of efficiency.
+        """Indicates that commands up to a terminating
+        :class:`Drawing.pop_defs` command create named elements (e.g.
+        clip-paths, textures, etc.) which may safely be processed earlier for
+        the sake of efficiency.
 
         .. versionadded:: 0.4.0
 
@@ -1874,9 +1883,9 @@ class Drawing(Resource):
         library.DrawScale(self.resource, x, y)
 
     def set_fill_pattern_url(self, url):
-        """Sets the URL to use as a fill pattern for filling objects. Only local
-        URLs ("#identifier") are supported at this time. These local URLs are
-        normally created by defining a named fill pattern with
+        """Sets the URL to use as a fill pattern for filling objects. Only
+        local URLs ("#identifier") are supported at this time. These local URLs
+        are normally created by defining a named fill pattern with
         Drawing.push_pattern & Drawing.pop_pattern.
 
         :param url: URL to use to obtain fill pattern.
@@ -1997,6 +2006,100 @@ class Drawing(Resource):
 
     def __call__(self, image):
         return self.draw(image)
+
+
+class FontMetrics(collections.namedtuple('FontMetrics',
+                                         FONT_METRICS_ATTRIBUTES)):
+    """
+    The tuple subtype which consists of font metrics data.
+
+    Pixel values can be converted to points by the following:
+
+    .. math::
+
+        points = \\frac{pixels \\ast 72}{resolution}
+
+    .. py:attribute:: character_width
+
+        (:class:`numbers.Real`) The horizontal value of the ``x`` in pixels.
+
+    .. py:attribute:: character_height
+
+        (:class:`numbers.Real`) The vertical value of the ``x`` in pixels.
+
+    .. py:attribute:: ascender
+
+        (:class:`numbers.Real`) The largest distance from the text baseline
+        to the highest point above the x-height. This value should always be
+        positive.
+
+    .. py:attribute:: descender
+
+        (:class:`numbers.Real`) The farthest distance from the text baseline
+        to the lowest point below the x-height. This value should always be
+        negative.
+
+    .. py:attribute:: text_width
+
+        (:class:`numbers.Real`) The full width of the text.
+
+    .. py:attribute:: text_height
+
+        (:class:`numbers.Real`) The full height of the text.
+
+    .. py:attribute:: maximum_horizontal_advance
+
+        (:class:`numbers.Real`) The largest distance from the start of one
+        character to the start of the following character.
+
+    .. py:attribute:: x1
+
+        (:class:`numbers.Real`) The horizontal value of the bounding box's
+        starting corner.
+
+    .. py:attribute:: y1
+
+        (:class:`numbers.Real`) The vertical value of the bounding box's
+        starting corner.
+
+    .. py:attribute:: x2
+
+        (:class:`numbers.Real`) The horizontal value of the bounding box's
+        ending corner.
+
+    .. py:attribute:: y2
+
+        (:class:`numbers.Real`) The vertical value of the bounding box's
+        ending corner.
+
+    .. py:attribute:: x
+
+        (:class:`numbers.Real`) The horizontal value of the origin.
+
+    .. py:attribute:: y
+
+        (:class:`numbers.Real`) The vertical value of the origin.
+
+    .. note::
+
+        When using :meth:`~wand.drawing.Drawing.get_font_metrics`, the returned
+        attributes ``x1``, ``y1``, ``x2``, ``y2``, ``x`` and ``y`` can be
+        ignored as they are used for internal FreeType rendering, and have no
+        meaningful context.
+
+    .. versionadded:: 0.3.0
+
+    .. versionchanged:: 0.6.8
+       Created sub-class of the namedtuple to improve auto-documentation.
+    """
+    def size(self):
+        """Short-cut method for the width & height of the rendered text.
+
+        :returns: (width, height)
+
+        .. versionadded:: 0.6.8
+        """
+        return self.text_width, self.text_height
 
 
 def _list_to_point_info(points):

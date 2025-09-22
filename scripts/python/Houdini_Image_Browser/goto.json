@@ -1,4 +1,8 @@
 {
+    "Area_lights": "Z:/_MvsM_Resource/_3D_Assets/_HDRI/Lights",
+    "HDRI": "Z:/_MvsM_Resource/_3D_Assets/_HDRI",
     "HIP": "$HIP",
-    "HOME": "$HOME"
+    "HOME": "$HOME",
+    "SCANS": "Z:/_MvsM_Resource/_3D_Assets/_Tex-Library/SCANS",
+    "TEX": "Z:/_MvsM_Resource/_3D_Assets/_Tex-Library"
 }

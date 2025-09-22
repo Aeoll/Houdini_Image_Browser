@@ -88,6 +88,7 @@ def load(lib, IM_VERSION):
         ]
         lib.MagickAdaptiveThresholdImage.restype = c_bool
     lib.MagickAddImage.argtypes = [c_void_p, c_void_p]
+    lib.MagickAddImage.restype = c_bool
     if is_im_6:
         lib.MagickAddNoiseImage.argtypes = [c_void_p, c_int]
         lib.MagickAddNoiseImage.restype = c_bool
@@ -486,6 +487,14 @@ def load(lib, IM_VERSION):
         lib.MagickGetImageFeatures.restype = c_void_p
     lib.MagickGetImageFilename.argtypes = [c_void_p]
     lib.MagickGetImageFilename.restype = c_void_p
+    if IM_VERSION >= 0x710:
+        try:
+            lib.MagickGetImageFilter.argtypes = [c_void_p]
+            lib.MagickGetImageFilter.restype = c_int
+        except AttributeError:
+            lib.MagickGetImageFilter = None
+    else:
+        lib.MagickGetImageFilter = None
     lib.MagickGetImageFormat.argtypes = [c_void_p]
     lib.MagickGetImageFormat.restype = c_void_p
     lib.MagickGetImageFuzz.argtypes = [c_void_p]
@@ -970,7 +979,7 @@ def load(lib, IM_VERSION):
     lib.MagickSetImageCompressionQuality.restype = c_bool
     lib.MagickSetImageDelay.argtypes = [c_void_p, c_ssize_t]
     lib.MagickSetImageDelay.restype = c_bool
-    lib.MagickSetImageDepth.argtypes = [c_void_p]
+    lib.MagickSetImageDepth.argtypes = [c_void_p, c_size_t]
     lib.MagickSetImageDepth.restype = c_bool
     lib.MagickSetImageDispose.argtypes = [c_void_p, c_int]
     lib.MagickSetImageDispose.restype = c_bool
@@ -983,6 +992,14 @@ def load(lib, IM_VERSION):
     lib.MagickSetImageExtent.restype = c_bool
     lib.MagickSetImageFilename.argtypes = [c_void_p, c_char_p]
     lib.MagickSetImageFilename.restype = c_bool
+    if IM_VERSION >= 0x710:
+        try:
+            lib.MagickSetImageFilter.argtypes = [c_void_p, c_int]
+            lib.MagickSetImageFilter.restype = c_bool
+        except AttributeError:
+            lib.MagickSetImageFilter = None
+    else:
+        lib.MagickSetImageFilter = None
     lib.MagickSetImageFormat.argtypes = [c_void_p, c_char_p]
     lib.MagickSetImageFormat.restype = c_bool
     lib.MagickSetImageFuzz.argtypes = [c_void_p, c_double]

@@ -2729,9 +2729,9 @@ class BaseImage(Resource):
         self.orientation = 'top_left'
 
     def _channel_to_mask(self, value):
-        """Attempts to resolve user input into a :c:type:`ChannelType` bit-mask.
-        User input can be an integer, a string defined in :const:`CHANNELS`,
-        or a string following ImageMagick's `CLI format`__.
+        """Attempts to resolve user input into a :c:type:`ChannelType`
+        bit-mask. User input can be an integer, a string defined in
+        :const:`CHANNELS`, or a string following ImageMagick's `CLI format`__.
 
         __ https://imagemagick.org/script/command-line-options.php#channel
 
@@ -3460,8 +3460,8 @@ class BaseImage(Resource):
     @manipulative
     @trap_exception
     def coalesce(self):
-        """Rebuilds image sequence with each frame size the same as first frame,
-        and composites each frame atop of previous.
+        """Rebuilds image sequence with each frame size the same as first
+        frame, and composites each frame atop of previous.
 
         .. note::
 
@@ -4624,7 +4624,7 @@ class BaseImage(Resource):
 
     @manipulative
     @trap_exception
-    def distort(self, method, arguments, best_fit=False):
+    def distort(self, method, arguments, best_fit=False, filter=None):
         """Distorts an image using various distorting methods.
 
         .. code:: python
@@ -4668,8 +4668,14 @@ class BaseImage(Resource):
         :param best_fit: Attempt to resize resulting image fit distortion.
                          Defaults False
         :type best_fit: :class:`bool`
+        :param filter: Optional resampling filter used when calculating
+                       pixel-value. Defaults to ``'mitchell'``, or
+                       ``'lanczos'`` based on image type & operation.
+        :type filter: :class:`basestring`
 
         .. versionadded:: 0.4.1
+        .. versionchanged:: 0.6.11
+           Included `filter=` parameter.
         """
         assertions.string_in_list(DISTORTION_METHODS,
                                   'wand.image.DISTORTION_METHODS',
@@ -4680,6 +4686,33 @@ class BaseImage(Resource):
         argc = len(arguments)
         argv = (ctypes.c_double * argc)(*arguments)
         method_idx = DISTORTION_METHODS.index(method)
+        if filter is not None:
+            assertions.string_in_list(FILTER_TYPES,
+                                      'wand.image.FILTER_TYPES',
+                                      filter=filter)
+            ok = False
+            if library.MagickSetImageFilter:
+                filter_idx = FILTER_TYPES.index(filter)
+                ok = library.MagickSetImageFilter(self.wand,
+                                                  filter_idx)
+            else:
+                img_info_ptr = libmagick.AcquireImageInfo()
+                exp_ptr = libmagick.AcquireExceptionInfo()
+                img_ptr = library.GetImageFromMagickWand(self.wand)
+                if all([img_info_ptr, exp_ptr, img_ptr]):
+                    libmagick.SetImageOption(img_info_ptr,
+                                             b'filter',
+                                             filter.encode())
+                    ok = libmagick.SyncImageSettings(img_info_ptr,
+                                                     img_ptr,
+                                                     exp_ptr)
+                if img_info_ptr:
+                    img_info_ptr = libmagick.DestroyImageInfo(img_info_ptr)
+                if exp_ptr:
+                    exp_ptr = libmagick.DestroyExceptionInfo(exp_ptr)
+                if not ok:
+                    raise AttributeError('Unable to set filter for ' +
+                                         filter)
         return library.MagickDistortImage(self.wand, method_idx,
                                           argc, argv, bool(best_fit))
 
@@ -4879,6 +4912,9 @@ class BaseImage(Resource):
         :rtype: :class:`collections.abc.Sequence`
 
         .. versionadded:: 0.5.0
+
+        .. versionchanged:: 0.6.11
+           Update storage type size for `"long"` & `"quantum"` values.
         """
         _w, _h = self.size
         if width is None:
@@ -4896,14 +4932,14 @@ class BaseImage(Resource):
                 raise ValueError('Unknown channel label: ' +
                                  repr(channel))
         c_storage_types = [
-            None,
-            ctypes.c_ubyte,
-            ctypes.c_double,
-            ctypes.c_float,
-            ctypes.c_uint,
-            ctypes.c_ulong,
-            ctypes.c_double,  # FIXME: Might be c_longdouble?
-            ctypes.c_ushort
+            None,                                # undefined
+            ctypes.c_ubyte,                      # char
+            ctypes.c_double,                     # double
+            ctypes.c_float,                      # float
+            ctypes.c_uint,                       # integer
+            ctypes.c_uint64,                     # long
+            library.PixelGetRedQuantum.restype,  # quantum
+            ctypes.c_ushort                      # short
         ]
         s_index = STORAGE_TYPES.index(storage)
         c_storage = c_storage_types[s_index]
@@ -5548,6 +5584,9 @@ class BaseImage(Resource):
         :type storage: :class:`basestring`
 
         .. versionadded:: 0.5.0
+
+        .. versionchanged:: 0.6.11
+           Update storage type size for `"long"` & `"quantum"` values.
         """
         _w, _h = self.size
         if width is None:
@@ -5577,14 +5616,14 @@ class BaseImage(Resource):
             )
             raise ValueError(msg)
         c_storage_types = [
-            None,
-            ctypes.c_ubyte,
-            ctypes.c_double,
-            ctypes.c_float,
-            ctypes.c_uint,
-            ctypes.c_ulong,
-            ctypes.c_double,  # FIXME: Might be c_longdouble ?
-            ctypes.c_ushort
+            None,                                # undefined
+            ctypes.c_ubyte,                      # char
+            ctypes.c_double,                     # double
+            ctypes.c_float,                      # float
+            ctypes.c_uint,                       # integer
+            ctypes.c_uint64,                     # long
+            library.PixelGetRedQuantum.restype,  # quantum
+            ctypes.c_ushort                      # short
         ]
         s_index = STORAGE_TYPES.index(storage)
         c_type = c_storage_types[s_index]
@@ -9754,9 +9793,15 @@ class Image(BaseImage):
 
         .. versionadded:: 0.1.6
 
+        .. versionchanged:: 0.6.11
+           Call :c:func:`MagickSetFormat` method after
+           :c:func:`MagickSetImageFormat`. This will ensure image info, magick,
+           and filename properties are aligned.
         """
         cloned = self.clone()
         cloned.format = format
+        library.MagickSetFormat(cloned.wand,
+                                binary(format.strip().upper()))
         return cloned
 
     def data_url(self):

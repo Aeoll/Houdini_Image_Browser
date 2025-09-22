@@ -2,7 +2,7 @@
     "enable" : true,
 	"env": [
         {
-			"HOUDINI_IMAGE_BROWSER": "path/to/root"
+			"HOUDINI_IMAGE_BROWSER": "P:/_INSTALL/Houdini/LIBS/Houdini_Image_Browser"
         }
 	],
 	"path": [

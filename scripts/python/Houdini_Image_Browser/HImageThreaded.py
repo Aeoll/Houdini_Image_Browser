@@ -1,28 +1,30 @@
 from __future__ import print_function
-import sys, time, os, json, time, hashlib
+import sys, os, json, hashlib
 from collections import defaultdict
 import functools
+from pathlib import Path
 
-try:
-    from pathlib import *
-except ImportError:
-    from pathlib2 import *
 try:
     import hou
 except:
     pass
 
-# PySide2
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-from PySide2.QtCore import *
-from PySide2 import QtUiTools
+try:
+    from PySide2.QtGui import *
+    from PySide2.QtWidgets import *
+    from PySide2.QtCore import *
+    from PySide2 import QtUiTools
+except:
+    from PySide6.QtGui import *
+    from PySide6.QtWidgets import *
+    from PySide6.QtCore import *
+    from PySide6 import QtUiTools
 
 # Wand
 from wand.image import Image
 import traceback
 
-'''
+"""
 TODO
 
 JSON Dict lookup has been removed and thumb key-value (path-thumbpath) lookup is now done with a hash
@@ -37,17 +39,40 @@ Only multithread for larger numbers of images? >5?
 Check for thumb regeneration by date modified on the file?
 
 Profiling: python -m cProfile .\HImage.py
-'''
+"""
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-THUMBDIR = SCRIPT_DIR + "/thumbs" # default thumb location
+THUMBDIR = SCRIPT_DIR + "/thumbs"  # default thumb location
 
-imExts = ["png", "jpg", "jpeg", "tga", "tiff", "exr", "hdr", "bmp", "tif", "gif", "dpx", "svg"]
-parmNames = ["file", "filename", "map", "path", "tex0", "ar_light_color_texture", "env_map", "TextureSampler1_tex0"]
+imExts = [
+    "png",
+    "jpg",
+    "jpeg",
+    "tga",
+    "tiff",
+    "exr",
+    "hdr",
+    "bmp",
+    "tif",
+    "gif",
+    "dpx",
+    "svg",
+]
+parmNames = [
+    "file",
+    "filename",
+    "map",
+    "path",
+    "tex0",
+    "ar_light_color_texture",
+    "env_map",
+    "TextureSampler1_tex0",
+]
 
-'''
+"""
 Multithreading Thumbnail creation and insertion
-'''
+"""
+
 
 class WorkerSignals(QObject):
     finished = Signal(object, int)
@@ -94,9 +119,9 @@ def getImages(p, recurse=False):
     return all_files
 
 
-'''
+"""
 QMainWindow
-'''
+"""
 
 
 class HImageThreaded(QWidget):
@@ -105,10 +130,14 @@ class HImageThreaded(QWidget):
         scriptpath = os.path.dirname(os.path.realpath(__file__))
 
         # check for ImageMagick Install
-        if not os.environ.get('MAGICK_HOME'):
+        if not os.environ.get("MAGICK_HOME"):
             m = QMessageBox()
-            m.setText("ImageMagick Install not found - please install and set 'MAGICK_HOME' Environment Variable:")
-            m.setInformativeText("https://docs.wand-py.org/en/0.6.6/guide/install.html#install-imagemagick-on-windows")
+            m.setText(
+                "ImageMagick Install not found - please install and set 'MAGICK_HOME' Environment Variable:"
+            )
+            m.setInformativeText(
+                "https://docs.wand-py.org/en/0.6.6/guide/install.html#install-imagemagick-on-windows"
+            )
             m.setStandardButtons(QMessageBox.Ok)
             m.exec_()
 
@@ -118,19 +147,19 @@ class HImageThreaded(QWidget):
         self.thumbdb = defaultdict(dict, load)
 
         # load config
-        with open(SCRIPT_DIR + "/config.json", 'r') as f:
+        with open(SCRIPT_DIR + "/config.json", "r") as f:
             self.config = json.load(f)
         f.close()
 
         self.thSize = [650, 650]
-        tlsz = int(self.config['StartupThumbListSize'])
+        tlsz = int(self.config["StartupThumbListSize"])
         self.thListSize = [tlsz, tlsz]
 
         # custom thumbnail save location
         global THUMBDIR
-        if self.config['ThumbPath'] != "":
+        if self.config["ThumbPath"] != "":
             try:
-                p = Path(self.config['ThumbPath']).joinpath("thumbs")
+                p = Path(self.config["ThumbPath"]).joinpath("thumbs")
                 THUMBDIR = str(p)
                 if not p.exists():
                     p.mkdir(parents=True)
@@ -139,32 +168,38 @@ class HImageThreaded(QWidget):
 
         # load UI
         loader = QtUiTools.QUiLoader()
-        self.ui = loader.load(scriptpath + '/himage.ui')
+        self.ui = loader.load(scriptpath + "/himage.ui")
 
         # Menu bar
-        self.menu = self.ui.findChild(QMenuBar, 'menubar')
-        self.menuGoto = self.ui.findChild(QMenu, 'menuGoTo')
-        self.actionThumbRecursive = self.ui.findChild(QAction, 'actionCreate_Thumbs_for_Directory')
+        self.menu = self.ui.findChild(QMenuBar, "menubar")
+        self.menuGoto = self.ui.findChild(QMenu, "menuGoTo")
+        self.actionThumbRecursive = self.ui.findChild(
+            QAction, "actionCreate_Thumbs_for_Directory"
+        )
         self.actionThumbRecursive.triggered.connect(self.thumbGenRecursive)
-        self.actionClearThumb = self.ui.findChild(QAction, 'actionClear_Thumb_Database')
-        self.actionRecreateThumbs = self.ui.findChild(QAction, 'actionRefresh_Current_Dir')
+        self.actionClearThumb = self.ui.findChild(QAction, "actionClear_Thumb_Database")
+        self.actionRecreateThumbs = self.ui.findChild(
+            QAction, "actionRefresh_Current_Dir"
+        )
         self.actionRecreateThumbs.triggered.connect(self.thumbGenNonRecursive)
 
-        self.fromNodeBtn = self.ui.findChild(QPushButton, 'fromNodeBtn')
+        self.fromNodeBtn = self.ui.findChild(QPushButton, "fromNodeBtn")
         self.fromNodeBtn.clicked.connect(self.pathFromNode)
 
-        self.actionAddFav = self.ui.findChild(QAction, 'actionAddFavourite')
+        self.actionAddFav = self.ui.findChild(QAction, "actionAddFavourite")
         self.actionAddFav.triggered.connect(self.addFav)
-        self.actionRemFav = self.ui.findChild(QAction, 'actionRemFavourite')
+        self.actionRemFav = self.ui.findChild(QAction, "actionRemFavourite")
         self.actionRemFav.triggered.connect(self.remFav)
-        self.actionSetStartupPath = self.ui.findChild(QAction, 'actionStartup')
+        self.actionSetStartupPath = self.ui.findChild(QAction, "actionStartup")
         self.actionSetStartupPath.triggered.connect(self.setStartupPath)
 
         # Add GoTo's
         self.gotoDirs = self.getGotoDirs()
         self.actions = []
         for key, val in self.gotoDirs.items():
-            action = QAction(str(key), self)  # needs a parent object in order to work in hou?
+            action = QAction(
+                str(key), self
+            )  # needs a parent object in order to work in hou?
             action.setData(str(val))
             self.actions.append(action)
             action.triggered.connect(functools.partial(self.goto, action.data()))
@@ -173,10 +208,12 @@ class HImageThreaded(QWidget):
         self.gotoSep = self.menuGoto.insertSeparator(self.actionSetStartupPath)
 
         # Add thumb size options
-        self.menuThumbSizes = self.ui.findChild(QMenu, 'menuThumbnail_Size')
+        self.menuThumbSizes = self.ui.findChild(QMenu, "menuThumbnail_Size")
         sizes = [50, 100, 150, 200, 250, 300]
         for s in sizes:
-            action = QAction(str(s), self)  # needs a parent object in order to work in hou?
+            action = QAction(
+                str(s), self
+            )  # needs a parent object in order to work in hou?
             action.setData(s)
             action.triggered.connect(functools.partial(self.thumbSizing, action.data()))
             self.menuThumbSizes.addAction(action)
@@ -184,7 +221,7 @@ class HImageThreaded(QWidget):
         # TREE VIEW AND FILESYSTEM MODEL
         self.model = QFileSystemModel()
         self.model.setFilter(QDir.NoDotAndDotDot | QDir.AllDirs)
-        self.tree = self.ui.findChild(QTreeView, 'dirtree')
+        self.tree = self.ui.findChild(QTreeView, "dirtree")
         self.tree.setModel(self.model)
         self.tree.setIndentation(15)
         self.tree.setColumnWidth(0, 250)  # get widget width to set..
@@ -192,35 +229,39 @@ class HImageThreaded(QWidget):
             self.tree.hideColumn(c)  # hide all columns except name..?
 
         # navigate to the startup/ROOT filepath
-        self.ROOT = self.config['StartupPath']
+        self.ROOT = self.config["StartupPath"]
         try:
             idx = self.model.index(QDir(self.ROOT).absolutePath())
         except:
             print("statup path not found")
 
-        self.model.setRootPath(str(Path(self.ROOT).drive))  # seems to be required for proper sorting
+        self.model.setRootPath(
+            str(Path(self.ROOT).drive)
+        )  # seems to be required for proper sorting
         self.tree.setSortingEnabled(False)
         # self.tree.setSortingEnabled(True)
         # self.tree.sortByColumn(0, Qt.SortOrder.AscendingOrder)
         self.tree.collapseAll()
         self.expandTree(idx)  # doesnt scroll properly on initial load?
-        self.tree.pressed.connect(self.treeSignal)  # prevents this firing twice on double click
+        self.tree.pressed.connect(
+            self.treeSignal
+        )  # prevents this firing twice on double click
 
         # Directory path Line edit
-        self.dirLineEdit = self.ui.findChild(QLineEdit, 'dirLineEdit')
+        self.dirLineEdit = self.ui.findChild(QLineEdit, "dirLineEdit")
         self.dirLineEdit.setText(QDir(self.ROOT).absolutePath())
         self.dirLineEdit.textChanged.connect(self.dirLineEditUpdate)
 
         # info labels
-        self.dir_info = self.ui.findChild(QLabel, 'dir_info')
-        self.image_info = self.ui.findChild(QLabel, 'image_info')
+        self.dir_info = self.ui.findChild(QLabel, "dir_info")
+        self.image_info = self.ui.findChild(QLabel, "image_info")
 
         # Large image preview
-        self.thumblargepreview = self.ui.findChild(QLabel, 'thumblargepreview')
+        self.thumblargepreview = self.ui.findChild(QLabel, "thumblargepreview")
         self.thumblargepreview.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
         # Thumbnail list view
-        self.thumblist = self.ui.findChild(QListWidget, 'thumblist')
+        self.thumblist = self.ui.findChild(QListWidget, "thumblist")
         self.thumblist.setIconSize(QSize(self.thSize[0], self.thSize[1]))
         self.thumblist.setSpacing(5)
         self.thumblist.doubleClicked.connect(self.setTexture)
@@ -228,7 +269,7 @@ class HImageThreaded(QWidget):
         self.thumblist.installEventFilter(self)
 
         # Thumbnail list view filtering
-        self.filter_lineedit = self.ui.findChild(QLineEdit, 'imagefilter_lineedit')
+        self.filter_lineedit = self.ui.findChild(QLineEdit, "imagefilter_lineedit")
         self.filter_lineedit.textChanged.connect(self.filterImages)
 
         self.thumblistdict = {}  # Dict mapping full path to image basename
@@ -250,26 +291,26 @@ class HImageThreaded(QWidget):
     def reset(self):
         self.treeSignal(self.tree.currentIndex())
 
-    '''
+    """
     Thumbnail list Context menu events
-    '''
+    """
 
     # right click event for qlist widget ?
     # https://stackoverflow.com/questions/48890473/how-do-i-make-a-context-menu-for-each-item-in-a-qlistwidget
     def eventFilter(self, source, event):
-        if (event.type() == QEvent.ContextMenu and source is self.thumblist):
+        if event.type() == QEvent.ContextMenu and source is self.thumblist:
             menu = QMenu()
             menu.setStyleSheet(hou.qt.styleSheet())
-            menu.addAction('Open in Explorer')
-            menu.addAction('Send to COPs (link to selected node)')
-            menu.addAction('Convert to ACES sRGB Texture? TODO')
+            menu.addAction("Open in Explorer")
+            menu.addAction("Send to COPs (link to selected node)")
+            menu.addAction("Convert to ACES sRGB Texture? TODO")
             action = menu.exec_(event.globalPos())
             if action:
                 # print("action made")
                 item = source.itemAt(event.pos())
-                if (action.text() == 'Open in Explorer'):
+                if action.text() == "Open in Explorer":
                     self.openDirectory(self.dirLineEdit.text() + "/" + item.text())
-                elif (action.text() == 'Send to COPs (link to selected node)'):
+                elif action.text() == "Send to COPs (link to selected node)":
                     self.sendToCOPs(item)
                 return True
         return False
@@ -279,28 +320,32 @@ class HImageThreaded(QWidget):
         platform = sys.platform
         if platform == "win32":  # win
             os.startfile(path)
-        elif platform == "darwin":  #osx
+        elif platform == "darwin":  # osx
             subprocess.Popen(["open", path])
-        else:  #linux
+        else:  # linux
             subprocess.Popen(["xdg-open", path])
 
-    '''
+    """
     Signals for menu bar actions
-    '''
+    """
 
     def setStartupPath(self):
         path = self.dirLineEdit.text()
-        self.config['StartupPath'] = path
-        with open(SCRIPT_DIR + "/config.json", 'w') as f:
+        self.config["StartupPath"] = path
+        with open(SCRIPT_DIR + "/config.json", "w") as f:
             json.dump(self.config, f, indent=4, sort_keys=True)
         f.close()
 
     def addFav(self):
         path = self.dirLineEdit.text()
-        favname, ok = QInputDialog.getText(self, "Add Favourite", "Name:", QLineEdit.Normal, "")
+        favname, ok = QInputDialog.getText(
+            self, "Add Favourite", "Name:", QLineEdit.Normal, ""
+        )
         if ok and favname:
             self.gotoDict[str(favname)] = str(path)
-            action = QAction(str(favname), self)  # needs a parent object in order to work in hou?
+            action = QAction(
+                str(favname), self
+            )  # needs a parent object in order to work in hou?
             action.setData(str(path))
             action.triggered.connect(functools.partial(self.goto, action.data()))
             self.actions.append(action)
@@ -320,18 +365,18 @@ class HImageThreaded(QWidget):
 
     def getGotoDirs(self):
         self.gotoDict = None
-        with open(SCRIPT_DIR + "/goto.json", 'r') as f:
+        with open(SCRIPT_DIR + "/goto.json", "r") as f:
             self.gotoDict = json.load(f)
         f.close()
         return self.gotoDict
 
     def writeGotoDirs(self):
-        with open(SCRIPT_DIR + "/goto.json", 'w') as f:
+        with open(SCRIPT_DIR + "/goto.json", "w") as f:
             json.dump(self.gotoDict, f, indent=4, sort_keys=True)
         f.close()
 
     def goto(self, path):
-        if path.startswith('$'):
+        if path.startswith("$"):
             try:
                 path = hou.expandString(path)
             except:
@@ -345,15 +390,15 @@ class HImageThreaded(QWidget):
 
     def thumbSizing(self, size):
         self.thListSize = [size, size]
-        self.config['StartupThumbListSize'] = str(size)
-        with open(SCRIPT_DIR + "/config.json", 'w') as f:
+        self.config["StartupThumbListSize"] = str(size)
+        with open(SCRIPT_DIR + "/config.json", "w") as f:
             json.dump(self.config, f, indent=4, sort_keys=True)
         f.close()
         self.reset()
 
-    '''
+    """
     Signals for tree view and url bar
-    '''
+    """
 
     def treeSignal(self, index):
         path = self.model.fileInfo(index).absoluteFilePath()
@@ -369,18 +414,24 @@ class HImageThreaded(QWidget):
 
     def dirLineEditUpdate(self, path):
         self.tree.setCurrentIndex(self.model.index(QDir(path).absolutePath()))
-        self.updateThumbList(QDir(path).absolutePath())  # also force the listwidget to update
+        self.updateThumbList(
+            QDir(path).absolutePath()
+        )  # also force the listwidget to update
 
-    '''
+    """
     Signals for thumb list and large preview
-    '''
+    """
 
     def setSingleThumb(self, path, idx):
         # thumbpath = self.thumbdb[str(path)]['thumb']
-        thumb_name_hashed = hashlib.md5(str(path).replace('\\', '/').encode('utf-8')).hexdigest()
+        thumb_name_hashed = hashlib.md5(
+            str(path).replace("\\", "/").encode("utf-8")
+        ).hexdigest()
         try:
             qim = QImage(THUMBDIR + "/" + thumb_name_hashed + ".jpg")
-            th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+            th = QPixmap.fromImage(qim).scaled(
+                self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio
+            )
             item = self.updateDict[idx]
             item.setIcon(QIcon(th))
         except:
@@ -399,8 +450,10 @@ class HImageThreaded(QWidget):
         imagelist = []
         for p in dirImages:
             if not p.is_dir() and p.suffix[1:] in imExts:
-                #filter for thumb creation here?
-                thumb_name_hashed = hashlib.md5(str(p).replace('\\', '/').encode('utf-8')).hexdigest()
+                # filter for thumb creation here?
+                thumb_name_hashed = hashlib.md5(
+                    str(p).replace("\\", "/").encode("utf-8")
+                ).hexdigest()
                 thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
                 if not Path(thumbname).exists():
                     imagelist.append(p)
@@ -409,15 +462,19 @@ class HImageThreaded(QWidget):
             if not self.threadpool:
                 self.threadpool = QThreadPool()
                 self.threadpool.setExpiryTimeout(3000)
-                self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 4)  # don't use all threads?
+                self.threadpool.setMaxThreadCount(
+                    self.threadpool.maxThreadCount() - 4
+                )  # don't use all threads?
                 # print("Multithreading thumbnail generation with maximum %d threads" % self.threadpool.maxThreadCount())
             else:
                 self.threadpool.clear()
 
-        #default icon
+        # default icon
         qim = QImage(150, 150, QImage.Format_RGB16)
         qim.fill(QColor(0, 0, 0))
-        th = QPixmap.fromImage(qim).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+        th = QPixmap.fromImage(qim).scaled(
+            self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio
+        )
         def_ic = QIcon(th)
 
         for idx, im in enumerate(dirImages):
@@ -430,15 +487,23 @@ class HImageThreaded(QWidget):
                 item.setTextAlignment(Qt.AlignHCenter | Qt.AlignBottom)
                 self.thumblist.addItem(item)
                 self.thumblistdict[imname] = str(im)
-                self.updateDict[idx] = item  # add the queued listitem to a widget so it can be updated properly
+                self.updateDict[idx] = (
+                    item  # add the queued listitem to a widget so it can be updated properly
+                )
 
                 worker = Worker(self.generateThumbnail, idx, str(im))
                 worker.signals.result.connect(self.setSingleThumb)
                 self.threadpool.start(worker)
             else:
-                thumb_name_hashed = hashlib.md5(str(im).replace('\\', '/').encode('utf-8')).hexdigest()
+                thumb_name_hashed = hashlib.md5(
+                    str(im).replace("\\", "/").encode("utf-8")
+                ).hexdigest()
                 thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
-                th = QPixmap(thumbname).scaled(self.thListSize[0], self.thListSize[1], aspectMode=Qt.KeepAspectRatio)
+                th = QPixmap(thumbname).scaled(
+                    self.thListSize[0],
+                    self.thListSize[1],
+                    aspectMode=Qt.KeepAspectRatio,
+                )
                 imname = str(Path(im).name)
                 item = QListWidgetItem(QIcon(th), str(imname))
                 item.setToolTip(str(imname))
@@ -452,7 +517,7 @@ class HImageThreaded(QWidget):
         for i in xrange(self.thumblist.count()):
             item = self.thumblist.item(i)
             text = item.text()
-            if (search_string in text.lower()):
+            if search_string in text.lower():
                 item.setHidden(False)
             else:
                 item.setHidden(True)
@@ -463,15 +528,27 @@ class HImageThreaded(QWidget):
         imasp = x / (y * 1.0)
         sz = 0
         if imasp >= fasp:
-            pixmap = pixmap.scaled(min(w, x), 10000, aspectMode=Qt.KeepAspectRatio, transformMode=Qt.SmoothTransformation)
+            pixmap = pixmap.scaled(
+                min(w, x),
+                10000,
+                aspectMode=Qt.KeepAspectRatio,
+                mode=Qt.SmoothTransformation,
+            )
         else:
-            pixmap = pixmap.scaled(10000, min(h, y), aspectMode=Qt.KeepAspectRatio, transformMode=Qt.SmoothTransformation)
+            pixmap = pixmap.scaled(
+                10000,
+                min(h, y),
+                aspectMode=Qt.KeepAspectRatio,
+                mode=Qt.SmoothTransformation,
+            )
         return pixmap
 
     def setLargePreview(self, item):
         texname = item.data()
         texpath = self.thumblistdict[texname]
-        thumb_name_hashed = hashlib.md5(str(texpath).replace('\\', '/').encode('utf-8')).hexdigest()
+        thumb_name_hashed = hashlib.md5(
+            str(texpath).replace("\\", "/").encode("utf-8")
+        ).hexdigest()
         try:
             thumbname = THUMBDIR + "/" + thumb_name_hashed + ".jpg"
             jpg = QPixmap(thumbname)
@@ -482,24 +559,28 @@ class HImageThreaded(QWidget):
             self.thumblargepreview.setPixmap(jpg)
             # self.image_info.setText("Image Size: " + self.thumbdb[texpath]['res'].replace(" ", " x "))  # set image size info
             self.image_info.setText("Image Size: N/A")  # set image size info
-        except:
-            print("thumbnail not yet generated")
+        except Exception as e:
+            print(e)
 
-    '''
+    """
     Thumbnail generation and db handling
-    '''
+    """
 
     def generateThumbnail(self, filepath):
         with Image(filename=filepath) as img:
-            name_hash = hashlib.md5(filepath.replace('\\', '/').encode('utf-8')).hexdigest()
+            name_hash = hashlib.md5(
+                filepath.replace("\\", "/").encode("utf-8")
+            ).hexdigest()
             thumb_filename_hashed = THUMBDIR + "/" + name_hash + ".jpg"
 
             # do not recreate the thumb if it exists. could do this earlier on?
             # if not Path(thumb_filename_hashed).exists():
             imsize = img.size
-            with img.convert('jpg') as i:
+            with img.convert("jpg") as i:
                 i.compression_quality = 68
-                i.transform(resize=str(self.thSize[0]) + 'x' + str(self.thSize[1]) + '>')  # faster than resize
+                i.transform(
+                    resize=str(self.thSize[0]) + "x" + str(self.thSize[1]) + ">"
+                )  # faster than resize
                 # i.save(filename=thumbdir)
                 i.save(filename=thumb_filename_hashed)
             key = filepath
@@ -519,7 +600,9 @@ class HImageThreaded(QWidget):
 
         if imagelist:
             # progress bar
-            self.pbar = QProgressDialog("Generating Thumbnails", "Abort", 0, len(imagelist))
+            self.pbar = QProgressDialog(
+                "Generating Thumbnails", "Abort", 0, len(imagelist)
+            )
             self.pbar.setWindowTitle("Thumbnail Generation Progress")
             self.pbar.setMinimumSize(QSize(600, 0))
             # self.pbar.setMaximum(0)
@@ -539,7 +622,9 @@ class HImageThreaded(QWidget):
             if not self.threadpool:
                 self.threadpool = QThreadPool()
                 self.threadpool.setExpiryTimeout(3000)
-                self.threadpool.setMaxThreadCount(self.threadpool.maxThreadCount() - 4)  # don't use all threads?
+                self.threadpool.setMaxThreadCount(
+                    self.threadpool.maxThreadCount() - 4
+                )  # don't use all threads?
             else:
                 self.threadpool.clear()
 
@@ -556,9 +641,9 @@ class HImageThreaded(QWidget):
         except:
             print("progress bar not found or thumb database write failed")
 
-    '''
+    """
     Interaction with Houdini nodes
-    '''
+    """
 
     def pathFromNode(self):
         if hou.selectedNodes():
@@ -584,27 +669,29 @@ class HImageThreaded(QWidget):
     def setTexture(self, item):
         texname = item.data()
         texpath = self.thumblistdict[texname]
-        QApplication.clipboard().setText(str(texpath).replace("\\", "/"))  # add to clipboard
+        QApplication.clipboard().setText(
+            str(texpath).replace("\\", "/")
+        )  # add to clipboard
         self._applyTex(texpath)
 
     def sendToCOPs(self, item):
         texname = item.text()
         texpath = self.thumblistdict[texname]
         print(texpath)
-        comp = hou.node('/img').createNode('img', "coptexture")
+        comp = hou.node("/img").createNode("img", "coptexture")
         comp.moveToGoodPosition()
-        file = comp.createNode('file')
-        file.parm('linearize').set(False)
+        file = comp.createNode("file")
+        file.parm("linearize").set(False)
         file.moveToGoodPosition()
-        out = comp.createNode('null', 'output')
+        out = comp.createNode("null", "output")
         out.moveToGoodPosition()
         out.setInput(0, file, 0)
-        file.parm('filename1').set(texpath)
+        file.parm("filename1").set(texpath)
         self._applyTex("op:" + comp.path() + "/" + out.name())
 
-    '''
+    """
     Cleanup on Close
-    '''
+    """
 
     def closeEvent(self, event):
         try:

@@ -7,8 +7,8 @@ from ctypes import POINTER, Structure, c_bool, c_double, c_int, c_size_t
 from wand.cdefs.wandtypes import c_ssize_t, c_magick_real_t, c_magick_size_t
 
 __all__ = ('AffineMatrix', 'CCMaxMetrics', 'CCObjectInfo', 'CCObjectInfo70A',
-           'ChannelFeature', 'GeometryInfo', 'KernelInfo', 'MagickPixelPacket',
-           'PixelInfo', 'PointInfo', 'RectangleInfo')
+           'CCObjectInfo710', 'ChannelFeature', 'GeometryInfo', 'KernelInfo',
+           'MagickPixelPacket', 'PixelInfo', 'PointInfo', 'RectangleInfo')
 
 
 class AffineMatrix(Structure):
@@ -187,6 +187,19 @@ class CCObjectInfo70A(Structure):
                 ('census', c_double),
                 ('merge', c_bool),
                 ('metric', c_double * CCMaxMetrics)]
+
+
+class CCObjectInfo710(Structure):
+    CCMaxMetrics = CCMaxMetrics
+    _fields_ = [('_id', c_ssize_t),
+                ('bounding_box', RectangleInfo),
+                ('color', PixelInfo),
+                ('centroid', PointInfo),
+                ('area', c_double),
+                ('census', c_double),
+                ('merge', c_bool),
+                ('metric', c_double * CCMaxMetrics),
+                ('key', c_ssize_t)]
 
 
 # All this will change with IM7, so let's not implement this just yet.

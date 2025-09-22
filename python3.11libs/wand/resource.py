@@ -178,6 +178,9 @@ class Resource(object):
                 resource.resource = library.NewResource()
 
         """
+        # As of 0x710, we must call MagickWandGenesis before allocate of
+        # Wand's Resource & ImageMagick PixelWand.
+        genesis()
         yield self
 
     def destroy(self):

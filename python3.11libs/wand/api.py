@@ -14,7 +14,7 @@ import os.path
 import platform
 import sys
 import traceback
-# Forward import for backwords compatibility.
+# Forward import for backwards compatibility.
 from .cdefs.structures import (AffineMatrix, MagickPixelPacket, PixelInfo,
                                PointInfo)
 if platform.system() == "Windows":
@@ -93,6 +93,9 @@ def library_paths():
             else:
                 libwand = 'lib', 'libMagickWand{0}.so'.format(suffix),
                 libmagick = 'lib', 'libMagickCore{0}.so'.format(suffix),
+                yield magick_path(libwand), magick_path(libmagick)
+                libwand = 'lib', 'libMagickWand{0}.so.9'.format(suffix),
+                libmagick = 'lib', 'libMagickCore{0}.so.9'.format(suffix),
                 yield magick_path(libwand), magick_path(libmagick)
                 libwand = 'lib', 'libMagickWand{0}.so.6'.format(suffix),
                 libmagick = 'lib', 'libMagickCore{0}.so.6'.format(suffix),
